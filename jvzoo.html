@@ -11,6 +11,7 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: #0b1c2d;
   color: #ffffff;
+  overflow-x: hidden;
 }
 
 /* CONTAINER */
@@ -51,28 +52,46 @@ h1 {
   margin-bottom: 25px;
   font-weight: 700;
   color: #ffffff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
 }
 p {
   font-size: 18px;
   color: #cfd8e3;
   margin-bottom: 40px;
   line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
 }
 
 /* BUY BUTTON BOX */
 .buy-box {
   margin: 50px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
 }
 
 /* JVZOO BUTTON IMAGE */
 .buy-box img {
   max-width: 300px;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, box-shadow 1s ease-in-out;
+  box-shadow: 0 5px 20px rgba(255,255,255,0.05);
+  position: relative;
 }
 .buy-box img:hover {
   transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(255,255,255,0.2);
+  box-shadow: 0 15px 30px rgba(255,255,255,0.2), 0 0 20px rgba(255,255,255,0.15) inset;
+  animation: glowPulse 2s infinite alternate;
+}
+
+/* Subtle glowing effect on buy button */
+@keyframes glowPulse {
+  from { box-shadow: 0 15px 30px rgba(255,255,255,0.2), 0 0 10px rgba(255,255,255,0.05) inset; }
+  to { box-shadow: 0 15px 30px rgba(255,255,255,0.25), 0 0 20px rgba(255,255,255,0.1) inset; }
 }
 
 /* DISCLAIMER */
@@ -86,6 +105,9 @@ p {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
 }
 .disclaimer h3 {
   color: #ffffff;
@@ -109,14 +131,14 @@ p {
 </head>
 <body>
 <div class="container">
-  <h1>Complete Your Secure Purchase</h1>
-  <p>
+  <h1 class="reveal">Complete Your Secure Purchase</h1>
+  <p class="reveal">
     You are purchasing the <strong>VEXA High-Ticket Closing Blueprint</strong><br>
     Digital Training Program — Instant Access After Payment
   </p>
 
   <!-- JVZOO BUY BUTTON WITH TRACKING PIXEL -->
-  <div class="buy-box">
+  <div class="buy-box reveal">
     <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank">
       <img src="https://i.jvzoo.com/115479/433067/1" 
            alt="VEXA PROFESSIONAL TRAINING SERIES • EXECUTIVE EDUCATION HIGH-TICKET CLOSING BLUEPRINT" 
@@ -125,7 +147,7 @@ p {
   </div>
 
   <!-- MANDATORY JVZOO DISCLAIMER -->
-  <div class="disclaimer">
+  <div class="disclaimer reveal">
     <h3>Disclaimer</h3>
     <p>
       Please note that this product does not provide any guarantee of income or success. The results achieved by the product owner or any other individuals mentioned are not indicative of future success or earnings. This website is not affiliated with FaceBook or any of its associated entities. Once you navigate away from FaceBook, the responsibility for the content and its usage lies solely with the user. All content on this website, including but not limited to text, images, and multimedia, is protected by copyright law and the Digital Millennium Copyright Act. Unauthorized copying, duplication, modification, or theft, whether intentional or unintentional, is strictly prohibited. Violators will be prosecuted to the fullest extent of the law. We want to clarify that JVZoo serves as the retailer for the products featured on this site. JVZoo® is a registered trademark of BBC Systems Inc., a Florida corporation located at 1809 E. Broadway Street, Suite 125, Oviedo, FL 32765, USA, and is used with permission. The role of JVZoo as a retailer does not constitute an endorsement, approval, or review of these products or any claims, statements, or opinions used in their promotion.
@@ -137,5 +159,22 @@ p {
     </p>
   </div>
 </div>
+
+<script>
+// Scroll reveal animation
+const revealElements = document.querySelectorAll('.reveal');
+const revealOnScroll = () => {
+  const windowHeight = window.innerHeight;
+  revealElements.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+    if(elementTop < windowHeight - 100) { 
+      el.style.opacity = 1;
+      el.style.transform = 'translateY(0)';
+    }
+  });
+};
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
 </body>
 </html>
