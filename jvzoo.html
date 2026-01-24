@@ -5,7 +5,6 @@
 <title>VEXA High-Ticket Closing Blueprint — Secure Checkout</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-/* BODY & BASE */
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -13,8 +12,6 @@ body {
   color: #ffffff;
   overflow-x: hidden;
 }
-
-/* CONTAINER */
 .container {
   max-width: 900px;
   margin: 80px auto;
@@ -26,8 +23,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
-/* MOVING LIGHT REFLECTION EFFECT */
 .container::before {
   content: "";
   position: absolute;
@@ -45,58 +40,33 @@ body {
   50% { transform: rotate(25deg) translateX(100%); }
   100% { transform: rotate(25deg) translateX(-100%); }
 }
-
-/* HEADINGS */
 h1 {
   font-size: 38px;
   margin-bottom: 25px;
   font-weight: 700;
   color: #ffffff;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
 }
 p {
   font-size: 18px;
   color: #cfd8e3;
   margin-bottom: 40px;
   line-height: 1.6;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
 }
-
-/* BUY BUTTON BOX */
 .buy-box {
   margin: 50px 0;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
 }
-
-/* JVZOO BUTTON IMAGE */
 .buy-box img {
   max-width: 300px;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, box-shadow 1s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 5px 20px rgba(255,255,255,0.05);
-  position: relative;
 }
 .buy-box img:hover {
   transform: scale(1.05);
   box-shadow: 0 15px 30px rgba(255,255,255,0.2), 0 0 20px rgba(255,255,255,0.15) inset;
-  animation: glowPulse 2s infinite alternate;
 }
-
-/* Subtle glowing effect on buy button */
-@keyframes glowPulse {
-  from { box-shadow: 0 15px 30px rgba(255,255,255,0.2), 0 0 10px rgba(255,255,255,0.05) inset; }
-  to { box-shadow: 0 15px 30px rgba(255,255,255,0.25), 0 0 20px rgba(255,255,255,0.1) inset; }
-}
-
-/* DISCLAIMER */
 .disclaimer {
-  margin-top: 80px;
+  margin-top: 40px;
   font-size: 16px;
   line-height: 1.7;
   color: #cfd8e3;
@@ -105,9 +75,6 @@ p {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
 }
 .disclaimer h3 {
   color: #ffffff;
@@ -120,8 +87,6 @@ p {
   margin-bottom: 15px;
   color: #cfd8e3;
 }
-
-/* RESPONSIVE */
 @media (max-width: 600px) {
   .container { padding: 30px; margin: 50px 15px; }
   h1 { font-size: 28px; }
@@ -131,14 +96,11 @@ p {
 </head>
 <body>
 <div class="container">
-  <h1 class="reveal">Complete Your Secure Purchase</h1>
-  <p class="reveal">
-    You are purchasing the <strong>VEXA High-Ticket Closing Blueprint</strong><br>
-    Digital Training Program — Instant Access After Payment
-  </p>
+  <h1>Complete Your Secure Purchase</h1>
+  <p>You are purchasing the <strong>VEXA High-Ticket Closing Blueprint</strong><br>Digital Training Program — Instant Access After Payment</p>
 
-  <!-- JVZOO BUY BUTTON WITH TRACKING PIXEL -->
-  <div class="buy-box reveal">
+  <!-- JVZoo Buy Button -->
+  <div class="buy-box">
     <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank">
       <img src="https://i.jvzoo.com/115479/433067/1" 
            alt="VEXA PROFESSIONAL TRAINING SERIES • EXECUTIVE EDUCATION HIGH-TICKET CLOSING BLUEPRINT" 
@@ -146,35 +108,18 @@ p {
     </a>
   </div>
 
-  <!-- MANDATORY JVZOO DISCLAIMER -->
-  <div class="disclaimer reveal">
-    <h3>Disclaimer</h3>
+  <!-- Non-Refundable Consent -->
+  <div class="disclaimer">
+    <h3>Non-Refundable Purchase Consent</h3>
     <p>
-      Please note that this product does not provide any guarantee of income or success. The results achieved by the product owner or any other individuals mentioned are not indicative of future success or earnings. This website is not affiliated with FaceBook or any of its associated entities. Once you navigate away from FaceBook, the responsibility for the content and its usage lies solely with the user. All content on this website, including but not limited to text, images, and multimedia, is protected by copyright law and the Digital Millennium Copyright Act. Unauthorized copying, duplication, modification, or theft, whether intentional or unintentional, is strictly prohibited. Violators will be prosecuted to the fullest extent of the law. We want to clarify that JVZoo serves as the retailer for the products featured on this site. JVZoo® is a registered trademark of BBC Systems Inc., a Florida corporation located at 1809 E. Broadway Street, Suite 125, Oviedo, FL 32765, USA, and is used with permission. The role of JVZoo as a retailer does not constitute an endorsement, approval, or review of these products or any claims, statements, or opinions used in their promotion.
+      I understand and agree that this purchase is non-refundable. I expressly request and consent to the immediate delivery of the digital content and/or services upon purchase, and acknowledge that by downloading or accessing the product, I waive my right of withdrawal under EU Directive 2011/83/EU.
     </p>
-    
-    <h3>Additional Disclosure</h3>
+
+    <h3>Mandatory JVZoo Disclaimer</h3>
     <p>
-      This blueprint is provided for educational and informational purposes only. The VEXA High-Ticket Closing Blueprint does NOT guarantee sales, income, employment, or financial results of any kind. Success in high-ticket sales depends on multiple factors including effort, skills, experience, market conditions, and ethical execution. Any income examples or scenarios referenced are illustrative only and should not be interpreted as guarantees. By using this material, you acknowledge that results vary from person to person, no sales or income outcomes are guaranteed, and you are responsible for your own decisions and results. VEXA makes no representations or warranties regarding earnings, sales success, or business outcomes.
+      Please note that this product does not provide any guarantee of income or success. The results achieved by the product owner or any other individuals mentioned are not indicative of future success or earnings. This website is not affiliated with Facebook or any of its associated entities. All content on this website, including text, images, and multimedia, is protected by copyright law. Unauthorized copying, duplication, modification, or theft is strictly prohibited. JVZoo serves as the retailer for this product. JVZoo® is a registered trademark of BBC Systems Inc., and the role of JVZoo as retailer does not constitute endorsement.
     </p>
   </div>
 </div>
-
-<script>
-// Scroll reveal animation
-const revealElements = document.querySelectorAll('.reveal');
-const revealOnScroll = () => {
-  const windowHeight = window.innerHeight;
-  revealElements.forEach(el => {
-    const elementTop = el.getBoundingClientRect().top;
-    if(elementTop < windowHeight - 100) { 
-      el.style.opacity = 1;
-      el.style.transform = 'translateY(0)';
-    }
-  });
-};
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
-</script>
 </body>
 </html>
