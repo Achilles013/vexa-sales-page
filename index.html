@@ -28,7 +28,6 @@
       z-index: 0;
     }
 
-    /* HEADER */
     header {
       position: relative;
       z-index: 10;
@@ -47,7 +46,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* HERO */
     .hero {
       position: relative;
       z-index: 5;
@@ -59,6 +57,7 @@
       font-weight: 700;
       margin-bottom: 20px;
       line-height: 1.2;
+      text-shadow: 0 0 15px #1f6fff, 0 0 30px #ff6f1f;
     }
     .hero p {
       font-size: 22px;
@@ -69,17 +68,17 @@
       margin-right: auto;
     }
 
-    /* SECTION */
     .section {
       position: relative;
       z-index: 5;
       padding: 80px 20px;
-      background-color: rgba(15,36,58,0.95);
+      background-color: rgba(15,36,58,0.9);
     }
     .section h2 {
       font-size: 40px;
       margin-bottom: 25px;
       text-align: center;
+      text-shadow: 0 0 10px #1f6fff, 0 0 20px #ff6f1f;
     }
     .section p, .section li {
       font-size: 18px;
@@ -87,7 +86,6 @@
       line-height: 1.6;
     }
 
-    /* PRODUCT CARD */
     .product-card {
       background-color: #081523;
       padding: 40px;
@@ -95,6 +93,8 @@
       max-width: 900px;
       box-shadow: 0 0 40px rgba(0,0,0,0.4);
       margin: auto;
+      position: relative;
+      overflow: hidden;
     }
     .product-card h3 {
       font-size: 28px;
@@ -104,7 +104,47 @@
     .product-card ul { list-style: none; padding: 0; margin-bottom: 40px; }
     .product-card ul li { margin-bottom: 12px; font-size: 17px; color: #cfd8e3; }
 
-    /* FOOTER */
+    /* JVZOO BUTTON - FUTURISTIC STYLE */
+    .buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .jvzoo {
+      display: inline-block;
+      padding: 20px 50px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #081523;
+      text-decoration: none;
+      background: linear-gradient(45deg, #ffffff, #1f6fff, #ff6f1f);
+      border-radius: 12px;
+      border: 2px solid #1f6fff;
+      box-shadow: 0 0 20px #1f6fff, 0 0 40px #ff6f1f inset;
+      position: relative;
+      z-index: 5;
+      transition: all 0.3s ease;
+    }
+    .jvzoo::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(90deg, rgba(31,111,255,0.1), rgba(255,111,31,0.1), rgba(31,111,255,0.1));
+      animation: rotateBorder 3s linear infinite;
+      border-radius: 12px;
+      z-index: -1;
+    }
+    .jvzoo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #1f6fff, 0 0 60px #ff6f1f inset;
+    }
+    @keyframes rotateBorder {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
     footer {
       position: relative;
       z-index: 5;
@@ -120,7 +160,6 @@
     }
     footer img { height: 40px; }
 
-    /* RESPONSIVE */
     @media (max-width: 600px) {
       .hero { padding: 60px 15px; }
       .section { padding: 60px 15px; }
@@ -128,6 +167,7 @@
       .hero h1 { font-size: 32px; }
       .hero p, .section p, .section li { font-size: 16px; }
       nav a { margin-left: 15px; }
+      .jvzoo { font-size: 16px; padding: 15px 30px; }
     }
   </style>
 </head>
@@ -222,16 +262,16 @@
       background: { color: "#0b1c2d" },
       fpsLimit: 60,
       particles: {
-        number: { value: 60, density: { enable: true, area: 900 } },
+        number: { value: 80, density: { enable: true, area: 900 } },
         color: { value: ["#1f6fff","#ff6f1f","#ffffff"] },
         shape: { type: "circle" },
         opacity: { value: 0.6, random: true },
-        size: { value: 4, random: true },
-        move: { enable: true, speed: 2, direction: "top", random: true, straight: false, outModes: { default: "out" } }
+        size: { value: 3, random: true },
+        move: { enable: true, speed: 2, direction: "none", random: true, straight: false, outModes: { default: "out" } }
       },
       interactivity: {
         events: { onhover: { enable: true, mode: "repulse" } },
-        modes: { repulse: { distance: 100, duration: 0.4 } }
+        modes: { repulse: { distance: 120, duration: 0.5 } }
       },
       detectRetina: true
     });
