@@ -34,7 +34,7 @@
     }
 
     .hero {
-      padding: 120px 80px;
+      padding: 120px 20px;
       background: linear-gradient(135deg, #0b1c2d, #102a43);
       text-align: center;
     }
@@ -56,13 +56,14 @@
     }
 
     .section {
-      padding: 100px 80px;
+      padding: 80px 20px;
       background-color: #0f243a;
     }
 
     .section h2 {
       font-size: 40px;
       margin-bottom: 25px;
+      text-align: center;
     }
 
     .section p, .section li {
@@ -73,7 +74,7 @@
 
     .product-card {
       background-color: #081523;
-      padding: 50px;
+      padding: 40px;
       border-radius: 12px;
       max-width: 900px;
       box-shadow: 0 0 40px rgba(0,0,0,0.4);
@@ -81,8 +82,9 @@
     }
 
     .product-card h3 {
-      font-size: 32px;
+      font-size: 28px;
       margin-bottom: 15px;
+      text-align: center;
     }
 
     .product-card ul {
@@ -128,13 +130,14 @@
 
     footer {
       background-color: #081523;
-      padding: 40px 80px;
+      padding: 40px 20px;
       color: #8fa6bf;
       font-size: 14px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       flex-wrap: wrap;
+      gap: 10px;
     }
 
     footer img {
@@ -142,12 +145,12 @@
     }
 
     @media (max-width: 600px) {
-      .hero { padding: 80px 20px; }
-      .section { padding: 60px 20px; }
-      .product-card { padding: 30px; }
-      .hero h1 { font-size: 36px; }
+      .hero { padding: 60px 15px; }
+      .section { padding: 60px 15px; }
+      .product-card { padding: 25px; }
+      .hero h1 { font-size: 32px; }
       .hero p, .section p, .section li { font-size: 16px; }
-      .buttons a { display: block; margin-bottom: 15px; margin-right: 0; }
+      .buttons a { display: block; margin-bottom: 15px; margin-right: 0; text-align: center; }
       footer { flex-direction: column; text-align: center; }
       footer img { margin-bottom: 10px; }
     }
@@ -176,8 +179,8 @@
   <!-- PRODUCTS -->
   <section class="section" id="products">
     <h2>Featured Product</h2>
-    <p>
-      The VEXA High-Ticket Closer Blueprint is built for beginners who want to learn how high-ticket sales actually work in real business environments—without hype, manipulation, or unrealistic promises.
+    <p style="text-align:center;">
+      Built for beginners who want to learn how high-ticket sales actually work in real business environments—without hype, manipulation, or unrealistic promises.
     </p>
 
     <div class="product-card">
@@ -223,7 +226,7 @@
       <div class="buttons">
         <a class="payhip" href="https://payhip.com/b/Pk79U" target="_blank">Buy on Payhip</a>
         <a class="jvzoo" href="jvzoo.html" target="_blank">Buy on JVZoo</a>
-        <a class="digistore" href="Digistore24/checkout.html" target="_blank">Buy on Digistore24</a>
+        <a class="digistore" href="Digistore24-page/index.html" target="_blank">Buy on Digistore24</a>
       </div>
 
       <p style="font-size: 14px; color: #cfd8e3; margin-top: 10px;">
@@ -236,8 +239,7 @@
   <footer>
     <img src="logo.png" alt="VEXA Logo">
     <div>
-      © 2026 VEXA. All rights reserved.  
-      <br>
+      © 2026 VEXA. All rights reserved.<br>
       Insights Today. Influence Tomorrow. Impact Forever.
     </div>
   </footer>
