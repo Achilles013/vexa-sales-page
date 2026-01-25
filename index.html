@@ -5,6 +5,9 @@
   <title>VEXA — High-Ticket Closer Blueprint</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- tsparticles library for bubbles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
   <style>
     body {
       margin: 0;
@@ -32,30 +35,22 @@
       letter-spacing: 0.5px;
     }
 
+    /* Hero Section */
     .hero {
       position: relative;
       z-index: 5;
-      padding: 120px 20px;
+      padding: 120px 20px 80px;
       text-align: center;
       overflow: hidden;
     }
-    .hero::before {
-      content: "";
+
+    #hero-bubbles {
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(120deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.05) 100%);
-      transform: rotate(25deg) translateX(-100%);
-      animation: slideLight 6s linear infinite;
-      pointer-events: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: 0;
-    }
-    @keyframes slideLight {
-      0% { transform: rotate(25deg) translateX(-100%); }
-      50% { transform: rotate(25deg) translateX(100%); }
-      100% { transform: rotate(25deg) translateX(-100%); }
     }
 
     .hero h1 {
@@ -70,33 +65,36 @@
     .hero p {
       font-size: 22px;
       color: #cfd8e3;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
       position: relative;
       z-index: 1;
     }
-    .buttons { text-align: center; margin-top: 30px; position: relative; z-index: 1; }
-
-    .jvzoo {
-      display: inline-block;
-      padding: 20px 50px;
+    .hero .series-label {
       font-size: 20px;
-      font-weight: 700;
-      color: #081523;
-      text-decoration: none;
-      background: linear-gradient(45deg, #ffffff, #1f6fff, #ff6f1f);
-      border-radius: 12px;
-      border: 2px solid #1f6fff;
-      box-shadow: 0 0 20px #1f6fff, 0 0 40px #ff6f1f inset;
-      transition: all 0.3s ease;
+      font-weight: 600;
+      color: #ff6f1f;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
     }
-    .jvzoo:hover {
+    .hero .buttons {
+      position: relative;
+      z-index: 1;
+    }
+    .hero .buttons img {
+      border-radius: 12px;
+      box-shadow: 0 0 25px #1f6fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .hero .buttons img:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 40px #1f6fff, 0 0 60px #ff6f1f inset;
+      box-shadow: 0 0 40px #1f6fff, 0 0 20px #ff6f1f inset;
     }
 
+    /* Product Section */
     .section {
       position: relative;
       z-index: 5;
@@ -117,6 +115,11 @@
       pointer-events: none;
       z-index: 0;
     }
+    @keyframes slideLight {
+      0% { transform: rotate(25deg) translateX(-100%); }
+      50% { transform: rotate(25deg) translateX(100%); }
+      100% { transform: rotate(25deg) translateX(-100%); }
+    }
 
     .section h2, .product-card h3 { font-size: 40px; margin-bottom: 25px; text-align: center; position: relative; z-index: 1; }
     .section p, .section li, .product-card ul li { font-size: 18px; color: #cfd8e3; line-height: 1.6; position: relative; z-index: 1; }
@@ -130,19 +133,6 @@
       box-shadow: 0 0 40px rgba(0,0,0,0.4);
       position: relative;
       overflow: hidden;
-    }
-    .product-card::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(120deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.03) 100%);
-      transform: rotate(25deg) translateX(-100%);
-      animation: slideLight 6s linear infinite;
-      pointer-events: none;
-      z-index: 0;
     }
 
     .product-card ul { list-style: none; padding: 0; margin-bottom: 40px; }
@@ -169,7 +159,6 @@
       .hero h1 { font-size: 32px; }
       .hero p, .section p, .section li { font-size: 16px; }
       nav a { margin-left: 15px; }
-      .jvzoo { font-size: 16px; padding: 15px 30px; }
     }
   </style>
 </head>
@@ -184,18 +173,20 @@
   </nav>
 </header>
 
+<!-- HERO SECTION -->
 <section class="hero" id="home">
+  <div id="hero-bubbles"></div>
   <h1>VEXA High-Ticket Closer Blueprint</h1>
-  <p>
-    Zero Experience to Professional Closer in 90 Days. Step-by-step training designed to help beginners understand, practice, and execute high-ticket closing ethically and effectively.
-  </p>
+  <p>Zero Experience to Professional Closer in 90 Days. Step-by-step training designed to help beginners understand, practice, and execute high-ticket closing ethically and effectively.</p>
+  <div class="series-label">VEXA PROFESSIONAL TRAINING SERIES</div>
   <div class="buttons">
     <a href="https://www.jvzoo.com/b/115479/433067/11" target="_blank">
-      <img src="https://i.jvzoo.com/115479/433067/11" alt="VEXA PROFESSIONAL TRAINING SERIES" style="border-radius:12px; box-shadow:0 0 25px #1f6fff;">
+      <img src="https://i.jvzoo.com/115479/433067/11" alt="Buy VEXA PROFESSIONAL TRAINING SERIES">
     </a>
   </div>
 </section>
 
+<!-- PRODUCTS SECTION -->
 <section class="section" id="products">
   <h2>Featured Product</h2>
   <p style="text-align:center;">
@@ -244,28 +235,40 @@
 
     <div class="buttons">
       <a href="https://www.jvzoo.com/b/115479/433067/11" target="_blank">
-        <img src="https://i.jvzoo.com/115479/433067/11" alt="VEXA PROFESSIONAL TRAINING SERIES" style="border-radius:12px; box-shadow:0 0 25px #1f6fff;">
+        <img src="https://i.jvzoo.com/115479/433067/11" alt="Buy VEXA PROFESSIONAL TRAINING SERIES">
       </a>
     </div>
 
     <section style="margin-top:30px; font-size:14px; color:#cfd8e3;">
       <h3>Non-Refundable Purchase Consent</h3>
-      <p>
-        I understand and agree that this purchase is non-refundable. I expressly request and consent to the immediate delivery of the digital content and/or services upon purchase, and acknowledge that by downloading or accessing the product, I waive my right of withdrawal under EU Directive 2011/83/EU.
-      </p>
+      <p>I understand and agree that this purchase is non-refundable. I expressly request and consent to the immediate delivery of the digital content and/or services upon purchase, and acknowledge that by downloading or accessing the product, I waive my right of withdrawal under EU Directive 2011/83/EU.</p>
+
       <h3>Mandatory JVZoo Disclaimer</h3>
-      <p>
-        Please note that this product does not provide any guarantee of income or success. The results achieved by the product owner or any other individuals mentioned are not indicative of future success or earnings. This website is not affiliated with Facebook or any of its associated entities. All content on this website, including text, images, and multimedia, is protected by copyright law. Unauthorized copying, duplication, modification, or theft is strictly prohibited. JVZoo serves as the retailer for this product. JVZoo® is a registered trademark of BBC Systems Inc., and the role of JVZoo as retailer does not constitute endorsement.
-      </p>
+      <p>Please note that this product does not provide any guarantee of income or success. The results achieved by the product owner or any other individuals mentioned are not indicative of future success or earnings. This website is not affiliated with Facebook or any of its associated entities. All content on this website, including text, images, and multimedia, is protected by copyright law. Unauthorized copying, duplication, modification, or theft is strictly prohibited. JVZoo serves as the retailer for this product. JVZoo® is a registered trademark of BBC Systems Inc., and the role of JVZoo as retailer does not constitute endorsement.</p>
     </section>
   </div>
 </section>
 
 <footer>
   <img src="logo.png" alt="VEXA Logo">
-  <div>
-    © 2026 VEXA. All rights reserved.
-  </div>
+  <div>© 2026 VEXA. All rights reserved.</div>
 </footer>
+
+<!-- Bubbles Script -->
+<script>
+tsParticles.load("hero-bubbles", {
+  particles: {
+    number: { value: 25, density: { enable: true, area: 800 } },
+    color: { value: "#ff6f1f" },
+    shape: { type: "circle" },
+    opacity: { value: 0.6, random: true },
+    size: { value: 5, random: true },
+    move: { enable: true, speed: 1, direction: "top", random: true, straight: false, outModes: { default: "out" } }
+  },
+  interactivity: { events: { onhover: { enable: false } } },
+  detectRetina: true
+});
+</script>
+
 </body>
 </html>
