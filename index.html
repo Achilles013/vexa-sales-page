@@ -14,7 +14,6 @@
       font-family: "Segoe UI", Arial, sans-serif;
       background-color: #0b1c2d;
       color: #ffffff;
-      position: relative;
       overflow-x: hidden;
     }
 
@@ -33,12 +32,12 @@
       background-color: #081523;
       padding: 25px 80px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
     header img { height: 55px; }
     nav a {
-      color: #ffffff;
+      color: #fff;
       text-decoration: none;
       margin-left: 40px;
       font-weight: 500;
@@ -66,30 +65,7 @@
       margin-left: auto;
       margin-right: auto;
     }
-
-    .section {
-      position: relative;
-      z-index: 5;
-      padding: 80px 20px;
-      background-color: rgba(15,36,58,0.9);
-    }
-
-    .product-card {
-      background-color: #081523;
-      padding: 40px;
-      border-radius: 12px;
-      max-width: 900px;
-      box-shadow: 0 0 40px rgba(0,0,0,0.4);
-      margin: auto;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .buttons {
-      text-align: center;
-      margin-top: 30px;
-    }
-
+    .buttons { text-align: center; margin-top: 30px; }
     .jvzoo {
       display: inline-block;
       padding: 20px 50px;
@@ -101,14 +77,34 @@
       border-radius: 12px;
       border: 2px solid #1f6fff;
       box-shadow: 0 0 20px #1f6fff, 0 0 40px #ff6f1f inset;
-      position: relative;
       transition: all 0.3s ease;
     }
-
     .jvzoo:hover {
       transform: scale(1.05);
       box-shadow: 0 0 40px #1f6fff, 0 0 60px #ff6f1f inset;
     }
+
+    .section {
+      position: relative;
+      z-index: 5;
+      padding: 80px 20px;
+      background-color: rgba(15,36,58,0.9);
+    }
+    .section h2 { font-size: 40px; margin-bottom: 25px; text-align: center; }
+    .section p, .section li { font-size: 18px; color: #cfd8e3; line-height: 1.6; }
+
+    .product-card {
+      background-color: #081523;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: auto;
+      box-shadow: 0 0 40px rgba(0,0,0,0.4);
+      overflow: hidden;
+    }
+    .product-card h3 { font-size: 28px; margin-bottom: 15px; text-align: center; }
+    .product-card ul { list-style: none; padding: 0; margin-bottom: 40px; }
+    .product-card ul li { margin-bottom: 12px; font-size: 17px; }
 
     footer {
       position: relative;
@@ -120,12 +116,23 @@
       display: flex;
       justify-content: center;
       gap: 10px;
+      flex-wrap: wrap;
+    }
+    footer img { height: 40px; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 60px 15px; }
+      .section { padding: 60px 15px; }
+      .product-card { padding: 25px; }
+      .hero h1 { font-size: 32px; }
+      .hero p, .section p, .section li { font-size: 16px; }
+      nav a { margin-left: 15px; }
+      .jvzoo { font-size: 16px; padding: 15px 30px; }
     }
   </style>
 </head>
 
 <body>
-
 <div id="tsparticles"></div>
 
 <header>
@@ -136,23 +143,87 @@
   </nav>
 </header>
 
+<!-- HERO SECTION -->
 <section class="hero" id="home">
   <h1>VEXA High-Ticket Closer Blueprint</h1>
   <p>
     Zero Experience to Professional Closer in 90 Days. Step-by-step training designed to help beginners understand, practice, and execute high-ticket closing ethically and effectively.
   </p>
+
+  <!-- BUY BUTTON IN HERO -->
+  <div class="buttons">
+    <a href="https://www.jvzoo.com/b/115479/433067/11" target="_blank">
+      <img src="https://i.jvzoo.com/115479/433067/11" alt="VEXA PROFESSIONAL TRAINING SERIES" style="border-radius:12px; box-shadow:0 0 25px #1f6fff;">
+    </a>
+  </div>
 </section>
 
+<!-- PRODUCTS SECTION -->
 <section class="section" id="products">
-  <div class="product-card">
+  <h2>Featured Product</h2>
+  <p style="text-align:center;">
+    Built for beginners who want to learn how high-ticket sales actually work in real business environments—without hype, manipulation, or unrealistic promises.
+  </p>
 
-    <!-- JVZOO COMPLIANT BUTTON WITH TRACKING PIXEL -->
+  <div class="product-card">
+    <h3>What This Blueprint Helps You Learn</h3>
+    <ul>
+      <li>How high-ticket sales really work behind the scenes</li>
+      <li>The role of a professional closer vs setters and sales reps</li>
+      <li>How to diagnose client needs instead of pushing offers</li>
+      <li>Ethical, pressure-free closing frameworks</li>
+      <li>How to handle objections with confidence and clarity</li>
+      <li>How to prepare, run, and follow up on professional sales calls</li>
+      <li>How to position yourself for remote closer opportunities</li>
+    </ul>
+
+    <h3>What’s Included</h3>
+    <ul>
+      <li>28-page professional PDF training manual</li>
+      <li>Beginner-friendly explanations with expert-level depth</li>
+      <li>Proven call frameworks and conversation structures</li>
+      <li>Objection-handling scripts and examples</li>
+      <li>Worksheets, checklists, and practice exercises</li>
+      <li>90-day action plan for skill development</li>
+      <li>Realistic income expectations and career pathways</li>
+      <li>Ethical selling standards and decision-making tools</li>
+    </ul>
+
+    <h3>Who This Is For</h3>
+    <ul>
+      <li>Beginners exploring high-ticket sales</li>
+      <li>Aspiring remote closers</li>
+      <li>Freelancers and consultants improving sales conversations</li>
+      <li>Professionals transitioning into commission-based roles</li>
+      <li>Anyone seeking a structured introduction to high-ticket closing</li>
+    </ul>
+
+    <h3>Who This Is NOT For</h3>
+    <ul>
+      <li>People looking for “get-rich-quick” schemes</li>
+      <li>Anyone expecting guaranteed income or instant results</li>
+      <li>Individuals unwilling to practice, learn, and improve</li>
+    </ul>
+
+    <!-- SECOND BUY BUTTON -->
     <div class="buttons">
-      <a class="jvzoo" href="https://www.jvzoo.com/b/115479/433067/1" target="_blank">
-        Buy on JVZoo
-        <img src="https://i.jvzoo.com/115479/433067/1" width="1" height="1" style="display:none;" alt="">
+      <a href="https://www.jvzoo.com/b/115479/433067/11" target="_blank">
+        <img src="https://i.jvzoo.com/115479/433067/11" alt="VEXA PROFESSIONAL TRAINING SERIES" style="border-radius:12px; box-shadow:0 0 25px #1f6fff;">
       </a>
     </div>
+
+    <!-- NON-REFUNDABLE + JVZOO DISCLAIMER -->
+    <section style="margin-top:30px; font-size:14px; color:#cfd8e3;">
+      <h3>Non-Refundable Purchase Consent</h3>
+      <p>
+        I understand and agree that this purchase is non-refundable. I expressly request and consent to the immediate delivery of the digital content and/or services upon purchase, and acknowledge that by downloading or accessing the product, I waive my right of withdrawal under EU Directive 2011/83/EU.
+      </p>
+
+      <h3>Mandatory JVZoo Disclaimer</h3>
+      <p>
+        Please note that this product does not provide any guarantee of income or success. The results achieved by the product owner or any other individuals mentioned are not indicative of future success or earnings. This website is not affiliated with Facebook or any of its associated entities. All content on this website, including text, images, and multimedia, is protected by copyright law. Unauthorized copying, duplication, modification, or theft is strictly prohibited. JVZoo serves as the retailer for this product. JVZoo® is a registered trademark of BBC Systems Inc., and the role of JVZoo as retailer does not constitute endorsement.
+      </p>
+    </section>
 
   </div>
 </section>
@@ -167,11 +238,20 @@
 <script>
 tsParticles.load("tsparticles", {
   background: { color: "#0b1c2d" },
+  fpsLimit: 60,
   particles: {
-    number: { value: 80 },
+    number: { value: 80, density: { enable: true, area: 900 } },
     color: { value: ["#1f6fff","#ff6f1f","#ffffff"] },
-    move: { enable: true, speed: 2 }
-  }
+    shape: { type: "circle" },
+    opacity: { value: 0.6, random: true },
+    size: { value: 3, random: true },
+    move: { enable: true, speed: 2, direction: "none", random: true, straight: false, outModes: { default: "out" } }
+  },
+  interactivity: {
+    events: { onhover: { enable: true, mode: "repulse" } },
+    modes: { repulse: { distance: 120, duration: 0.5 } }
+  },
+  detectRetina: true
 });
 </script>
 
