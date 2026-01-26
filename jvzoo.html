@@ -1,276 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>VEXA High-Ticket Closer Blueprint</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- tsparticles library for bubbles -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+<meta charset="UTF-8">
+<title>Secure Checkout — VEXA High-Ticket Closing Blueprint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #0b1c2d;
-      color: #ffffff;
-      overflow-x: hidden;
-    }
-    header {
-      background-color: #081523;
-      padding: 25px 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header img { height: 55px; }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 40px;
-      font-weight: 500;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #0b1c2d;
+  color: #ffffff;
+}
 
-    .hero {
-      position: relative;
-      padding: 120px 20px 80px;
-      text-align: center;
-      overflow: hidden;
-    }
-    #hero-bubbles {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%; z-index: 0;
-    }
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      text-shadow: 0 0 15px #1f6fff, 0 0 30px #ff6f1f;
-      position: relative; z-index: 1;
-    }
-    .hero p {
-      font-size: 22px;
-      color: #cfd8e3;
-      max-width: 700px;
-      margin: 0 auto 20px;
-      position: relative; z-index: 1;
-    }
-    .series-label {
-      font-size: 20px;
-      font-weight: 600;
-      color: #ff6f1f;
-      margin-bottom: 40px;
-      position: relative; z-index: 1;
-    }
-    .buttons {
-      position: relative;
-      z-index: 1;
-    }
-    .buttons img {
-      border-radius: 12px;
-      box-shadow: 0 0 25px #1f6fff;
-      transition: transform 0.3s;
-      max-width: 300px;
-    }
-    .buttons img:hover { transform: scale(1.05); }
+.container {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 60px;
+  background-color: #081523;
+  border-radius: 14px;
+  box-shadow: 0 0 60px rgba(0,0,0,0.6);
+  text-align: center;
+}
 
-    .section {
-      padding: 80px 20px;
-      background-color: rgba(15,36,58,0.9);
-    }
-    .product-card {
-      background-color: #081523;
-      padding: 40px;
-      border-radius: 12px;
-      max-width: 900px;
-      margin: auto;
-      box-shadow: 0 0 40px rgba(0,0,0,0.4);
-    }
-    .product-card h3 { color: #ff6f1f; margin-bottom: 20px; font-size: 26px; }
-    .product-card ul { list-style: none; margin-bottom: 40px; }
-    .product-card ul li {
-      margin-bottom: 12px;
-      padding-left: 25px;
-      position: relative;
-      font-size: 17px;
-      color: #cfd8e3;
-    }
-    .product-card ul li::before {
-      content: "✓";
-      position: absolute; left: 0;
-      color: #1f6fff;
-      font-weight: bold;
-    }
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
 
-    .buy-section {
-      text-align: center;
-      margin: 60px 0;
-      padding: 40px;
-      border-radius: 12px;
-      border: 2px solid rgba(31,111,255,0.3);
-      background: rgba(31,111,255,0.05);
-    }
-    .buy-section h3 {
-      color: #ffffff;
-      margin-bottom: 25px;
-      font-size: 28px;
-    }
+h2 {
+  font-size: 26px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #f2c94c;
+}
 
-    .disclaimer-section {
-      margin-top: 60px;
-      padding: 30px;
-      background-color: #0a1929;
-      border-radius: 10px;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #cfd8e3;
-    }
-    .disclaimer-section h3 {
-      color: #ffffff;
-      margin: 25px 0 15px;
-      font-size: 20px;
-    }
-    .disclaimer-section p {
-      margin-bottom: 15px;
-    }
+p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
 
-    footer {
-      background-color: #081523;
-      padding: 40px 20px;
-      text-align: center;
-      color: #8fa6bf;
-    }
-    footer img {
-      height: 40px;
-      margin-bottom: 15px;
-    }
+.features {
+  text-align: left;
+  max-width: 750px;
+  margin: 40px auto;
+}
 
-    @media (max-width: 600px) {
-      header { padding: 20px; }
-      header img { height: 40px; }
-      nav a { margin-left: 15px; font-size: 14px; }
-      .hero { padding: 80px 15px 60px; }
-      .hero h1 { font-size: 32px; }
-      .hero p { font-size: 18px; }
-      .product-card { padding: 25px; }
-    }
-  </style>
+.features li {
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+.price {
+  font-size: 38px;
+  margin: 30px 0 10px 0;
+  color: #00e0ff;
+  font-weight: bold;
+}
+
+.secure {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #aaaaaa;
+}
+
+.footer-links {
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+.footer-links a {
+  color: #bbbbbb;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <img src="logo.png" alt="VEXA Logo">
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-  </nav>
-</header>
+<div class="container">
 
-<!-- HERO SECTION -->
-<section class="hero" id="home">
-  <div id="hero-bubbles"></div>
-  <h1>VEXA High-Ticket Closer Blueprint</h1>
-  <p>Zero Experience to Professional Closer in 90 Days. Step-by-step training designed to help beginners understand, practice, and execute high-ticket closing ethically and effectively.</p>
-  <div class="series-label">VEXA PROFESSIONAL TRAINING SERIES</div>
+  <h1>VEXA Professional Training Series</h1>
+  <h2>Executive Education – High-Ticket Closing Blueprint</h2>
 
-  <div class="buttons">
-    <a href="https://www.jvzoo.com/b/115479/433067/1">
-      <img src="https://i.jvzoo.com/115479/433067/1" alt="Buy VEXA High-Ticket Closing Blueprint">
+  <p>
+  Master elite-level high-ticket closing systems used by executive sales leaders, 
+  enterprise consultants, and strategic negotiators to close complex, high-value deals 
+  with authority, psychology, and precision.
+  </p>
+
+  <div class="features">
+    <ul>
+      <li>Advanced closing frameworks used in enterprise and advisory sales</li>
+      <li>Psychological persuasion systems for high-net-worth prospects</li>
+      <li>Executive-level negotiation structures</li>
+      <li>Objection mastery and deal-finalization strategies</li>
+      <li>Scalable closing systems for premium offers</li>
+    </ul>
+  </div>
+
+  <div class="price">$997 — One-Time Executive Access</div>
+
+  <!-- ================= JVZoo Buy Button (FULLY COMPLIANT) ================= -->
+
+  <div style="margin:50px 0;">
+
+    <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank">
+      <img src="https://i.jvzoo.com/115479/433067/1" alt="Buy Now Secure Checkout">
     </a>
-  </div>
-</section>
-
-<!-- PRODUCTS SECTION -->
-<section class="section" id="products">
-  <div class="product-card">
-
-    <h3>What This Blueprint Helps You Learn</h3>
-    <ul>
-      <li>How high-ticket sales really work behind the scenes</li>
-      <li>The role of a professional closer vs setters and sales reps</li>
-      <li>How to diagnose client needs instead of pushing offers</li>
-      <li>Ethical, pressure-free closing frameworks</li>
-      <li>How to handle objections with confidence and clarity</li>
-      <li>How to prepare, run, and follow up on professional sales calls</li>
-      <li>How to position yourself for remote closer opportunities</li>
-    </ul>
-
-    <h3>What's Included</h3>
-    <ul>
-      <li>28-page professional PDF training manual</li>
-      <li>Beginner-friendly explanations with expert-level depth</li>
-      <li>Proven call frameworks and conversation structures</li>
-      <li>Objection-handling scripts and examples</li>
-      <li>Worksheets, checklists, and practice exercises</li>
-      <li>90-day action plan for skill development</li>
-      <li>Realistic income expectations and career pathways</li>
-      <li>Ethical selling standards and decision-making tools</li>
-    </ul>
-
-    <h3>Who This Is For</h3>
-    <ul>
-      <li>Beginners exploring high-ticket sales</li>
-      <li>Aspiring remote closers</li>
-      <li>Freelancers and consultants improving sales conversations</li>
-      <li>Professionals transitioning into commission-based roles</li>
-      <li>Anyone seeking a structured introduction to high-ticket closing</li>
-    </ul>
-
-    <h3>Who This Is NOT For</h3>
-    <ul>
-      <li>People looking for "get-rich-quick" schemes</li>
-      <li>Anyone expecting guaranteed income or instant results</li>
-      <li>Individuals unwilling to practice, learn, and improve</li>
-    </ul>
-
-    <!-- Buy Section -->
-    <div class="buy-section">
-      <h3>Get Instant Access Now</h3>
-      <a href="https://www.jvzoo.com/b/115479/433067/1">
-        <img src="https://i.jvzoo.com/115479/433067/1" alt="Buy VEXA High-Ticket Closing Blueprint">
-      </a>
-    </div>
-
-    <!-- Disclaimers -->
-    <div class="disclaimer-section">
-      <h3>Non-Refundable Purchase Consent</h3>
-      <p>I understand and agree that this purchase is non-refundable. I expressly request and consent to the immediate delivery of the digital content and/or services upon purchase, and acknowledge that by downloading or accessing the product, I waive my right of withdrawal under EU Directive 2011/83/EU.</p>
-
-      <h3>Disclaimer</h3>
-      <p>Please note that this product does not provide any guarantee of income or success. The results achieved by the product owner or any other individuals mentioned are not indicative of future success or earnings. This website is not affiliated with FaceBook or any of its associated entities. Once you navigate away from FaceBook, the responsibility for the content and its usage lies solely with the user. All content on this website, including but not limited to text, images, and multimedia, is protected by copyright law and the Digital Millennium Copyright Act. Unauthorized copying, duplication, modification, or theft, whether intentional or unintentional, is strictly prohibited. Violators will be prosecuted to the fullest extent of the law. We want to clarify that JVZoo serves as the retailer for the products featured on this site. JVZoo® is a registered trademark of BBC Systems Inc., a Florida corporation located at 1809 E. Broadway Street, Suite 125, Oviedo, FL 32765, USA, and is used with permission. The role of JVZoo as a retailer does not constitute an endorsement, approval, or review of these products or any claims, statements, or opinions used in their promotion.</p>
-    </div>
 
   </div>
-</section>
 
-<footer>
-  <img src="logo.png" alt="VEXA Logo">
-  <div>© 2026 VEXA. All rights reserved.</div>
-</footer>
+  <div class="secure">
+    🔒 Secure JVZoo Checkout • Instant Access • Encrypted Payment Processing
+  </div>
 
-<script>
-tsParticles.load("hero-bubbles", {
-  particles: {
-    number: { value: 25, density: { enable: true, area: 800 } },
-    color: { value: "#ff6f1f" },
-    shape: { type: "circle" },
-    opacity: { value: 0.6, random: true },
-    size: { value: 5, random: true },
-    move: { 
-      enable: true, 
-      speed: 1, 
-      direction: "top", 
-      random: true, 
-      straight: false, 
-      outModes: { default: "out" } 
-    }
-  },
-  interactivity: { 
-    events: { onhover: { enable: false } } 
-  },
-  detectRetina: true
-});
-</script>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a> |
+    <a href="#">Terms of Service</a> |
+    <a href="#">Support</a>
+  </div>
+
+</div>
+
+<!-- ================= JVZoo REQUIRED DISCLAIMER (EXACT WORD-FOR-WORD) ================= -->
+
+<div style="max-width:1000px; margin:80px auto 60px auto; padding:0 30px; font-size:13px; line-height:1.6; color:#bbbbbb; text-align:left;">
+
+Please note that this product does not provide any guarantee of income or success. 
+The results achieved by the product owner or any other individuals mentioned are 
+not indicative of future success or earnings. This website is not affiliated with 
+FaceBook or any of its associated entities. Once you navigate away from FaceBook, 
+the responsibility for the content and its usage lies solely with the user. All 
+content on this website, including but not limited to text, images, and multimedia, 
+is protected by copyright law and the Digital Millennium Copyright Act. Unauthorized 
+copying, duplication, modification, or theft, whether intentional or unintentional, 
+is strictly prohibited. Violators will be prosecuted to the fullest extent of the 
+law. We want to clarify that JVZoo serves as the retailer for the products featured 
+on this site. JVZoo® is a registered trademark of BBC Systems Inc., a Florida 
+corporation located at 1809 E. Broadway Street, Suite 125, Oviedo, FL 32765, USA, 
+and is used with permission. The role of JVZoo as a retailer does not constitute 
+an endorsement, approval, or review of these products or any claims, statements, 
+or opinions used in their promotion.
+
+</div>
 
 </body>
 </html>
