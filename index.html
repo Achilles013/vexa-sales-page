@@ -43,7 +43,6 @@
       text-align: center;
       overflow: hidden;
     }
-
     #hero-bubbles {
       position: absolute;
       top: 0;
@@ -52,7 +51,6 @@
       height: 100%;
       z-index: 0;
     }
-
     .hero h1 {
       font-size: 48px;
       font-weight: 700;
@@ -83,15 +81,26 @@
     .hero .buttons {
       position: relative;
       z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-    .hero .buttons img {
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #1f6fff 0%, #ff6f1f 100%);
+      color: white;
+      padding: 20px 60px;
+      font-size: 24px;
+      font-weight: 700;
+      text-decoration: none;
       border-radius: 12px;
-      box-shadow: 0 0 25px #1f6fff;
+      box-shadow: 0 0 25px #1f6fff, 0 4px 15px rgba(0,0,0,0.3);
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .hero .buttons img:hover {
+    .cta-button:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 40px #1f6fff, 0 0 20px #ff6f1f inset;
+      box-shadow: 0 0 40px #1f6fff, 0 0 20px #ff6f1f;
     }
 
     /* Product Section */
@@ -102,25 +111,6 @@
       background-color: rgba(15,36,58,0.9);
       overflow: hidden;
     }
-    .section::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(120deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.03) 100%);
-      transform: rotate(25deg) translateX(-100%);
-      animation: slideLight 6s linear infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
-    @keyframes slideLight {
-      0% { transform: rotate(25deg) translateX(-100%); }
-      50% { transform: rotate(25deg) translateX(100%); }
-      100% { transform: rotate(25deg) translateX(-100%); }
-    }
-
     .section h2, .product-card h3 { font-size: 40px; margin-bottom: 25px; text-align: center; position: relative; z-index: 1; }
     .section p, .section li, .product-card ul li { font-size: 18px; color: #cfd8e3; line-height: 1.6; position: relative; z-index: 1; }
 
@@ -134,7 +124,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .product-card ul { list-style: none; padding: 0; margin-bottom: 40px; }
     .product-card ul li { margin-bottom: 12px; font-size: 17px; }
 
@@ -170,6 +159,7 @@
   <nav>
     <a href="#home">Home</a>
     <a href="#products">Products</a>
+    <a href="clickbank.html">Buy via ClickBank</a> <!-- Safe placeholder -->
   </nav>
 </header>
 
@@ -179,11 +169,16 @@
   <h1>VEXA High-Ticket Closer Blueprint</h1>
   <p>Zero Experience to Professional Closer in 90 Days. Step-by-step training designed to help beginners understand, practice, and execute high-ticket closing ethically and effectively.</p>
   <div class="series-label">VEXA PROFESSIONAL TRAINING SERIES</div>
+
   <div class="buttons">
-    <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank">
-      <img src="https://i.jvzoo.com/115479/433067/11" alt="Buy VEXA PROFESSIONAL TRAINING SERIES for $197" style="border-radius:12px; box-shadow:0 0 25px #1f6fff;">
-      <!-- JVZoo tracking pixel -->
-      <img src="https://i.jvzoo.com/115479/433067/1" width="1" height="1" style="display:none;" alt="">
+    <!-- JVZoo Buy Button (live product) -->
+    <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank" class="cta-button">
+      Buy via JVZoo — $197
+    </a>
+
+    <!-- ClickBank Placeholder Button -->
+    <a href="clickbank.html" class="cta-button" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
+      Buy via ClickBank (Coming Soon)
     </a>
   </div>
 </section>
@@ -206,49 +201,6 @@
       <li>How to prepare, run, and follow up on professional sales calls</li>
       <li>How to position yourself for remote closer opportunities</li>
     </ul>
-
-    <h3>What’s Included</h3>
-    <ul>
-      <li>28-page professional PDF training manual</li>
-      <li>Beginner-friendly explanations with expert-level depth</li>
-      <li>Proven call frameworks and conversation structures</li>
-      <li>Objection-handling scripts and examples</li>
-      <li>Worksheets, checklists, and practice exercises</li>
-      <li>90-day action plan for skill development</li>
-      <li>Realistic income expectations and career pathways</li>
-      <li>Ethical selling standards and decision-making tools</li>
-    </ul>
-
-    <h3>Who This Is For</h3>
-    <ul>
-      <li>Beginners exploring high-ticket sales</li>
-      <li>Aspiring remote closers</li>
-      <li>Freelancers and consultants improving sales conversations</li>
-      <li>Professionals transitioning into commission-based roles</li>
-      <li>Anyone seeking a structured introduction to high-ticket closing</li>
-    </ul>
-
-    <h3>Who This Is NOT For</h3>
-    <ul>
-      <li>People looking for “get-rich-quick” schemes</li>
-      <li>Anyone expecting guaranteed income or instant results</li>
-      <li>Individuals unwilling to practice, learn, and improve</li>
-    </ul>
-
-    <div class="buttons">
-      <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank">
-        <img src="https://i.jvzoo.com/115479/433067/11" alt="Buy VEXA PROFESSIONAL TRAINING SERIES for $197" style="border-radius:12px; box-shadow:0 0 25px #1f6fff;">
-        <img src="https://i.jvzoo.com/115479/433067/1" width="1" height="1" style="display:none;" alt="">
-      </a>
-    </div>
-
-    <section style="margin-top:30px; font-size:14px; color:#cfd8e3;">
-      <h3>Non-Refundable Purchase Consent</h3>
-      <p>I understand and agree that this purchase is non-refundable. I expressly request and consent to the immediate delivery of the digital content and/or services upon purchase, and acknowledge that by downloading or accessing the product, I waive my right of withdrawal under EU Directive 2011/83/EU.</p>
-
-      <h3>Mandatory JVZoo Disclaimer</h3>
-      <p>Please note that this product does not provide any guarantee of income or success. The results achieved by the product owner or any other individuals mentioned are not indicative of future success or earnings. This website is not affiliated with Facebook or any of its associated entities. All content on this website, including text, images, and multimedia, is protected by copyright law. Unauthorized copying, duplication, modification, or theft is strictly prohibited. JVZoo serves as the retailer for this product. JVZoo® is a registered trademark of BBC Systems Inc., and the role of JVZoo as retailer does not constitute endorsement.</p>
-    </section>
   </div>
 </section>
 
