@@ -35,7 +35,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Hero Section */
     .hero {
       position: relative;
       z-index: 5;
@@ -43,6 +42,7 @@
       text-align: center;
       overflow: hidden;
     }
+
     #hero-bubbles {
       position: absolute;
       top: 0;
@@ -51,6 +51,7 @@
       height: 100%;
       z-index: 0;
     }
+
     .hero h1 {
       font-size: 48px;
       font-weight: 700;
@@ -78,14 +79,8 @@
       position: relative;
       z-index: 1;
     }
-    .hero .buttons {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+
+    /* CTA Button Styling */
     .cta-button {
       display: inline-block;
       background: linear-gradient(135deg, #1f6fff 0%, #ff6f1f 100%);
@@ -97,13 +92,13 @@
       border-radius: 12px;
       box-shadow: 0 0 25px #1f6fff, 0 4px 15px rgba(0,0,0,0.3);
       transition: transform 0.3s, box-shadow 0.3s;
+      margin: 20px 0;
     }
     .cta-button:hover {
       transform: scale(1.05);
       box-shadow: 0 0 40px #1f6fff, 0 0 20px #ff6f1f;
     }
 
-    /* Product Section */
     .section {
       position: relative;
       z-index: 5;
@@ -111,41 +106,56 @@
       background-color: rgba(15,36,58,0.9);
       overflow: hidden;
     }
-    .section h2, .product-card h3 { font-size: 40px; margin-bottom: 25px; text-align: center; position: relative; z-index: 1; }
-    .section p, .section li, .product-card ul li { font-size: 18px; color: #cfd8e3; line-height: 1.6; position: relative; z-index: 1; }
-
-    .product-card {
-      background-color: #081523;
-      padding: 40px;
-      border-radius: 12px;
-      max-width: 900px;
-      margin: auto;
-      box-shadow: 0 0 40px rgba(0,0,0,0.4);
-      position: relative;
-      overflow: hidden;
+    .section::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.03) 100%);
+      transform: rotate(25deg) translateX(-100%);
+      animation: slideLight 6s linear infinite;
+      pointer-events: none;
+      z-index: 0;
     }
-    .product-card ul { list-style: none; padding: 0; margin-bottom: 40px; }
-    .product-card ul li { margin-bottom: 12px; font-size: 17px; }
+    @keyframes slideLight {
+      0% { transform: rotate(25deg) translateX(-100%); }
+      50% { transform: rotate(25deg) translateX(100%); }
+      100% { transform: rotate(25deg) translateX(-100%); }
+    }
+
+    .section h2 { 
+      font-size: 40px; 
+      margin-bottom: 25px; 
+      text-align: center; 
+      position: relative; 
+      z-index: 1; 
+    }
+    .section p, .section li { 
+      font-size: 18px; 
+      color: #cfd8e3; 
+      line-height: 1.6; 
+      position: relative; 
+      z-index: 1; 
+    }
 
     footer {
       position: relative;
       z-index: 5;
       background-color: #081523;
-      padding: 40px 20px;
+      padding: 20px;
       color: #8fa6bf;
       font-size: 14px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      text-align: center;
     }
-    footer img { height: 40px; }
+    footer img { height: 40px; margin-bottom: 10px; }
 
     @media (max-width: 600px) {
       .hero { padding: 60px 15px; }
       .section { padding: 60px 15px; }
-      .product-card { padding: 25px; }
       .hero h1 { font-size: 32px; }
+      .cta-button { padding: 15px 40px; font-size: 20px; }
       .hero p, .section p, .section li { font-size: 16px; }
       nav a { margin-left: 15px; }
     }
@@ -159,7 +169,8 @@
   <nav>
     <a href="#home">Home</a>
     <a href="#products">Products</a>
-    <a href="clickbank.html">Buy via ClickBank</a> <!-- Safe placeholder -->
+    <a href="terms.html">Terms</a>
+    <a href="privacy.html">Privacy</a>
   </nav>
 </header>
 
@@ -169,44 +180,20 @@
   <h1>VEXA High-Ticket Closer Blueprint</h1>
   <p>Zero Experience to Professional Closer in 90 Days. Step-by-step training designed to help beginners understand, practice, and execute high-ticket closing ethically and effectively.</p>
   <div class="series-label">VEXA PROFESSIONAL TRAINING SERIES</div>
-
-  <div class="buttons">
-    <!-- JVZoo Buy Button (live product) -->
-    <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank" class="cta-button">
-      Buy via JVZoo — $197
-    </a>
-
-    <!-- ClickBank Placeholder Button -->
-    <a href="clickbank.html" class="cta-button" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
-      Buy via ClickBank (Coming Soon)
-    </a>
-  </div>
+  
+  <!-- CTA BUTTON: Links directly to ClickBank-approved page -->
+  <a href="clickbank.html" class="cta-button">Get Instant Access — $197</a>
 </section>
 
 <!-- PRODUCTS SECTION -->
 <section class="section" id="products">
   <h2>Featured Product</h2>
-  <p style="text-align:center;">
-    Built for beginners who want to learn how high-ticket sales actually work in real business environments—without hype, manipulation, or unrealistic promises.
-  </p>
-
-  <div class="product-card">
-    <h3>What This Blueprint Helps You Learn</h3>
-    <ul>
-      <li>How high-ticket sales really work behind the scenes</li>
-      <li>The role of a professional closer vs setters and sales reps</li>
-      <li>How to diagnose client needs instead of pushing offers</li>
-      <li>Ethical, pressure-free closing frameworks</li>
-      <li>How to handle objections with confidence and clarity</li>
-      <li>How to prepare, run, and follow up on professional sales calls</li>
-      <li>How to position yourself for remote closer opportunities</li>
-    </ul>
-  </div>
+  <p style="text-align:center;">Built for beginners who want to learn high-ticket sales without hype or unrealistic promises.</p>
 </section>
 
 <footer>
   <img src="logo.png" alt="VEXA Logo">
-  <div>© 2026 VEXA. All rights reserved.</div>
+  <div>© 2026 VEXA Professional Development. All Rights Reserved.</div>
 </footer>
 
 <!-- Bubbles Script -->
