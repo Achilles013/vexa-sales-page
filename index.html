@@ -58,7 +58,7 @@ button { width:100%; padding:15px; background:#1f6fff; color:#fff; border:none; 
   <img src="logo.png" alt="VEXA Logo">
   <nav>
     <a href="#home">Home</a>
-    <a href="https://YOUR-CLICKBANK-PRODUCT-NUMBER.pay.clickbank.net/" target="_blank">ClickBank Product</a>
+    <a href="#" id="navClickBank">ClickBank Product</a>
     <a href="#" id="contactBtn">Contact</a>
   </nav>
 </header>
@@ -70,17 +70,14 @@ button { width:100%; padding:15px; background:#1f6fff; color:#fff; border:none; 
   <p>Zero Experience to Professional Closer in 90 Days. Step-by-step training designed to help beginners understand, practice, and execute high-ticket closing ethically and effectively.</p>
   <div class="series-label">VEXA PROFESSIONAL TRAINING SERIES</div>
   <div class="buttons">
-    <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank">
-      <img src="https://i.jvzoo.com/115479/433067/11" alt="Buy VEXA PROFESSIONAL TRAINING SERIES for $197">
-      <img src="https://i.jvzoo.com/115479/433067/1" width="1" height="1" style="display:none;" alt="">
-    </a>
+    <button id="heroBuyBtn">Buy VEXA Now</button>
   </div>
 </section>
 
 <!-- Floating ClickBank Button -->
-<a href="https://YOUR-CLICKBANK-PRODUCT-NUMBER.pay.clickbank.net/" target="_blank" id="clickbankFloating">
+<button id="clickbankFloating">
   <img src="https://i.imgur.com/yFZJfRg.png" alt="ClickBank Buy Now">
-</a>
+</button>
 
 <!-- PRODUCTS SECTION -->
 <section class="section" id="products">
@@ -123,10 +120,7 @@ button { width:100%; padding:15px; background:#1f6fff; color:#fff; border:none; 
       <li>Individuals unwilling to practice, learn, and improve</li>
     </ul>
     <div class="buttons">
-      <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank">
-        <img src="https://i.jvzoo.com/115479/433067/11" alt="Buy VEXA PROFESSIONAL TRAINING SERIES for $197">
-        <img src="https://i.jvzoo.com/115479/433067/1" width="1" height="1" style="display:none;" alt="">
-      </a>
+      <button id="productBuyBtn">Buy VEXA Now</button>
     </div>
   </div>
 </section>
@@ -154,6 +148,12 @@ button { width:100%; padding:15px; background:#1f6fff; color:#fff; border:none; 
   <div>© 2026 VEXA. All rights reserved.</div>
 </footer>
 
+<!-- ClickBank Vendor Script -->
+<script>
+window.clickbank = { vendor: "vexaa" };
+</script>
+<script src="https://scripts.clickbank.net/hop.min.js" defer></script>
+
 <!-- SCRIPTS -->
 <script>
 tsParticles.load("hero-bubbles", {
@@ -168,6 +168,14 @@ tsParticles.load("hero-bubbles", {
   interactivity: { events: { onhover: { enable: false } } },
   detectRetina: true
 });
+
+// ClickBank Button Handlers
+const buyButtons = [document.getElementById('heroBuyBtn'), document.getElementById('clickbankFloating'), document.getElementById('productBuyBtn'), document.getElementById('navClickBank')];
+buyButtons.forEach(btn => btn.addEventListener('click', e => {
+  e.preventDefault();
+  // Replace "productname" with your approved ClickBank product ID once live
+  hop.link("productname");
+}));
 
 // Contact Modal
 const contactBtn = document.getElementById('contactBtn');
@@ -189,7 +197,6 @@ form.addEventListener('submit', e => {
   const message = document.getElementById('message').value.trim();
   
   if(!firstName || !lastName || !email || !phone || !message) { alert('All fields are required.'); return; }
-  if(firstName.toLowerCase().includes('oooo') || lastName.toLowerCase().includes('oooo') || message.toLowerCase().includes('oooo')) { alert('Invalid input.'); return; }
   const phonePattern = /^\+\d{1,4}[0-9]{5,15}$/;
   if(!phonePattern.test(phone)) { alert('Phone number must include country code and be valid.'); return; }
   
