@@ -4,205 +4,146 @@
 <meta charset="UTF-8">
 <title>VEXA — High-Ticket Closer Blueprint</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- tsparticles library for bubbles -->
+
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
 <style>
-body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background-color: #0b1c2d; color: #ffffff; overflow-x: hidden; }
-header { position: relative; z-index: 10; background-color: #081523; padding: 25px 80px; display: flex; justify-content: space-between; align-items: center; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #0b1c2d;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+header {
+  background-color: #081523;
+  padding: 25px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 header img { height: 55px; }
-nav a { color: #fff; text-decoration: none; margin-left: 40px; font-weight: 500; letter-spacing: 0.5px; }
-/* Hero Section */
-.hero { position: relative; z-index: 5; padding: 120px 20px 80px; text-align: center; overflow: hidden; }
-#hero-bubbles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
-.hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 20px; line-height: 1.2; text-shadow: 0 0 15px #1f6fff, 0 0 30px #ff6f1f; position: relative; z-index: 1; }
-.hero p { font-size: 22px; color: #cfd8e3; margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto; position: relative; z-index: 1; }
-.hero .series-label { font-size: 20px; font-weight: 600; color: #ff6f1f; margin-bottom: 40px; position: relative; z-index: 1; }
-.hero .buttons { position: relative; z-index: 1; }
-.hero .buttons img { border-radius: 12px; box-shadow: 0 0 25px #1f6fff; transition: transform 0.3s, box-shadow 0.3s; }
-.hero .buttons img:hover { transform: scale(1.05); box-shadow: 0 0 40px #1f6fff, 0 0 20px #ff6f1f inset; }
-/* Product Section */
-.section { position: relative; z-index: 5; padding: 80px 20px; background-color: rgba(15,36,58,0.9); overflow: hidden; }
-.section::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(120deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.03) 100%); transform: rotate(25deg) translateX(-100%); animation: slideLight 6s linear infinite; pointer-events: none; z-index: 0; }
-@keyframes slideLight { 0% { transform: rotate(25deg) translateX(-100%); } 50% { transform: rotate(25deg) translateX(100%); } 100% { transform: rotate(25deg) translateX(-100%); } }
-.section h2, .product-card h3 { font-size: 40px; margin-bottom: 25px; text-align: center; position: relative; z-index: 1; }
-.section p, .section li, .product-card ul li { font-size: 18px; color: #cfd8e3; line-height: 1.6; position: relative; z-index: 1; }
-.product-card { background-color: #081523; padding: 40px; border-radius: 12px; max-width: 900px; margin: auto; box-shadow: 0 0 40px rgba(0,0,0,0.4); position: relative; overflow: hidden; }
-.product-card ul { list-style: none; padding: 0; margin-bottom: 40px; }
-.product-card ul li { margin-bottom: 12px; font-size: 17px; }
-footer { position: relative; z-index: 5; background-color: #081523; padding: 40px 20px; color: #8fa6bf; font-size: 14px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-footer img { height: 40px; }
-/* Floating ClickBank Button */
-#clickbankFloating { position: fixed; bottom: 25px; right: 25px; z-index: 999; cursor: pointer; border-radius: 12px; box-shadow: 0 0 20px #1f6fff; }
-#clickbankFloating img { width: 150px; }
-/* Contact Modal */
-#contactModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:1000; justify-content:center; align-items:center; }
-#contactModal div { background:#081523; padding:30px; border-radius:12px; max-width:500px; width:90%; position:relative; }
-#closeModal { position:absolute; top:15px; right:20px; cursor:pointer; font-size:20px; color:#fff; }
-input, textarea { width:100%; padding:10px; margin-bottom:10px; border-radius:6px; border:none; }
-button { width:100%; padding:15px; background:#1f6fff; color:#fff; border:none; border-radius:8px; font-weight:700; cursor:pointer; }
-@media (max-width: 600px) {
-  .hero { padding: 60px 15px; }
-  .section { padding: 60px 15px; }
-  .product-card { padding: 25px; }
-  .hero h1 { font-size: 32px; }
-  .hero p, .section p, .section li { font-size: 16px; }
-  nav a { margin-left: 15px; }
-  #clickbankFloating img { width:120px; }
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 40px;
+  font-weight: 500;
+}
+.hero {
+  padding: 120px 20px 80px;
+  text-align: center;
+  position: relative;
+}
+#hero-bubbles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero h1 {
+  font-size: 48px;
+  text-shadow: 0 0 15px #1f6fff, 0 0 30px #ff6f1f;
+  position: relative;
+  z-index: 1;
+}
+.hero p {
+  font-size: 22px;
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+.series-label {
+  color: #ff6f1f;
+  font-weight: 600;
+  margin: 25px 0;
+}
+.buttons img {
+  border-radius: 12px;
+  box-shadow: 0 0 25px #1f6fff;
+}
+.section {
+  background-color: rgba(15,36,58,0.9);
+  padding: 80px 20px;
+}
+.product-card {
+  background-color: #081523;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: auto;
+}
+footer {
+  background-color: #081523;
+  padding: 40px;
+  text-align: center;
+  color: #8fa6bf;
+  font-size: 14px;
 }
 </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
 <header>
   <img src="logo.png" alt="VEXA Logo">
   <nav>
     <a href="#home">Home</a>
-    <a href="#" id="navClickBank">ClickBank Product</a>
-    <a href="#" id="contactBtn">Contact</a>
+    <a href="clickbank.html">Products</a>
   </nav>
 </header>
 
-<!-- HERO SECTION -->
 <section class="hero" id="home">
   <div id="hero-bubbles"></div>
+
   <h1>VEXA High-Ticket Closer Blueprint</h1>
-  <p>Zero Experience to Professional Closer in 90 Days. Step-by-step training designed to help beginners understand, practice, and execute high-ticket closing ethically and effectively.</p>
+  <p>Zero Experience to Professional Closer in 90 Days. Ethical, real-world high-ticket sales training.</p>
   <div class="series-label">VEXA PROFESSIONAL TRAINING SERIES</div>
+
   <div class="buttons">
-    <button id="heroBuyBtn">Buy VEXA Now</button>
+    <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank">
+      <img src="https://i.jvzoo.com/115479/433067/11" alt="Buy via JVZoo">
+      <img src="https://i.jvzoo.com/115479/433067/1" width="1" height="1" style="display:none">
+    </a>
   </div>
 </section>
 
-<!-- Floating ClickBank Button -->
-<button id="clickbankFloating">
-  <img src="https://i.imgur.com/yFZJfRg.png" alt="ClickBank Buy Now">
-</button>
-
-<!-- PRODUCTS SECTION -->
-<section class="section" id="products">
-  <h2>Featured Product</h2>
-  <p style="text-align:center;">Built for beginners who want to learn how high-ticket sales actually work in real business environments—without hype, manipulation, or unrealistic promises.</p>
+<section class="section">
   <div class="product-card">
+    <h2>Featured Product</h2>
+    <p>
+      Built for beginners who want to learn how high-ticket sales actually work — without hype or manipulation.
+    </p>
+
     <h3>What This Blueprint Helps You Learn</h3>
     <ul>
-      <li>How high-ticket sales really work behind the scenes</li>
-      <li>The role of a professional closer vs setters and sales reps</li>
-      <li>How to diagnose client needs instead of pushing offers</li>
+      <li>How high-ticket sales work behind the scenes</li>
       <li>Ethical, pressure-free closing frameworks</li>
-      <li>How to handle objections with confidence and clarity</li>
-      <li>How to prepare, run, and follow up on professional sales calls</li>
-      <li>How to position yourself for remote closer opportunities</li>
+      <li>Client diagnosis instead of pushing offers</li>
+      <li>Professional call structure & follow-up</li>
     </ul>
-    <h3>What’s Included</h3>
-    <ul>
-      <li>28-page professional PDF training manual</li>
-      <li>Beginner-friendly explanations with expert-level depth</li>
-      <li>Proven call frameworks and conversation structures</li>
-      <li>Objection-handling scripts and examples</li>
-      <li>Worksheets, checklists, and practice exercises</li>
-      <li>90-day action plan for skill development</li>
-      <li>Realistic income expectations and career pathways</li>
-      <li>Ethical selling standards and decision-making tools</li>
-    </ul>
-    <h3>Who This Is For</h3>
-    <ul>
-      <li>Beginners exploring high-ticket sales</li>
-      <li>Aspiring remote closers</li>
-      <li>Freelancers and consultants improving sales conversations</li>
-      <li>Professionals transitioning into commission-based roles</li>
-      <li>Anyone seeking a structured introduction to high-ticket closing</li>
-    </ul>
+
     <h3>Who This Is NOT For</h3>
     <ul>
-      <li>People looking for “get-rich-quick” schemes</li>
-      <li>Anyone expecting guaranteed income or instant results</li>
-      <li>Individuals unwilling to practice, learn, and improve</li>
+      <li>Get-rich-quick seekers</li>
+      <li>Anyone expecting guaranteed income</li>
     </ul>
-    <div class="buttons">
-      <button id="productBuyBtn">Buy VEXA Now</button>
-    </div>
   </div>
 </section>
 
-<!-- CONTACT MODAL -->
-<div id="contactModal">
-  <div>
-    <span id="closeModal">&times;</span>
-    <h2 style="color:#1f6fff; text-align:center; margin-bottom:20px;">Contact Us</h2>
-    <form id="contactForm">
-      <input type="text" id="firstName" placeholder="First Name" required>
-      <input type="text" id="lastName" placeholder="Last Name" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="tel" id="phone" placeholder="Phone (+CountryCode)" pattern="^\+\d{1,4}[0-9]{5,15}$" required>
-      <textarea id="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p id="formStatus" style="color:#27ae60; margin-top:10px; text-align:center;"></p>
-  </div>
-</div>
-
-<!-- FOOTER -->
 <footer>
-  <img src="logo.png" alt="VEXA Logo">
-  <div>© 2026 VEXA. All rights reserved.</div>
+  <img src="logo.png" alt="VEXA Logo"><br>
+  © 2026 VEXA. All rights reserved.
 </footer>
 
-<!-- ClickBank Vendor Script -->
-<script>
-window.clickbank = { vendor: "vexaa" };
-</script>
-<script src="https://scripts.clickbank.net/hop.min.js" defer></script>
-
-<!-- SCRIPTS -->
 <script>
 tsParticles.load("hero-bubbles", {
   particles: {
-    number: { value: 25, density: { enable: true, area: 800 } },
+    number: { value: 25 },
     color: { value: "#ff6f1f" },
-    shape: { type: "circle" },
-    opacity: { value: 0.6, random: true },
-    size: { value: 5, random: true },
-    move: { enable: true, speed: 1, direction: "top", random: true, straight: false, outModes: { default: "out" } }
-  },
-  interactivity: { events: { onhover: { enable: false } } },
-  detectRetina: true
-});
-
-// ClickBank Button Handlers
-const buyButtons = [document.getElementById('heroBuyBtn'), document.getElementById('clickbankFloating'), document.getElementById('productBuyBtn'), document.getElementById('navClickBank')];
-buyButtons.forEach(btn => btn.addEventListener('click', e => {
-  e.preventDefault();
-  // Replace "productname" with your approved ClickBank product ID once live
-  hop.link("productname");
-}));
-
-// Contact Modal
-const contactBtn = document.getElementById('contactBtn');
-const modal = document.getElementById('contactModal');
-const closeModal = document.getElementById('closeModal');
-const form = document.getElementById('contactForm');
-const formStatus = document.getElementById('formStatus');
-
-contactBtn.addEventListener('click', e => { e.preventDefault(); modal.style.display = 'flex'; });
-closeModal.addEventListener('click', () => { modal.style.display = 'none'; formStatus.textContent = ''; form.reset(); });
-window.addEventListener('click', e => { if(e.target === modal) modal.style.display = 'none'; });
-
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  const firstName = document.getElementById('firstName').value.trim();
-  const lastName = document.getElementById('lastName').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const message = document.getElementById('message').value.trim();
-  
-  if(!firstName || !lastName || !email || !phone || !message) { alert('All fields are required.'); return; }
-  const phonePattern = /^\+\d{1,4}[0-9]{5,15}$/;
-  if(!phonePattern.test(phone)) { alert('Phone number must include country code and be valid.'); return; }
-  
-  formStatus.textContent = 'Message sent successfully! We will contact you soon.';
-  form.reset();
+    move: { enable: true, speed: 1, direction: "top" }
+  }
 });
 </script>
+
 </body>
 </html>
