@@ -2,95 +2,259 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>VEXA ClickBank Product</title>
+<title>VEXA — High-Ticket Closer Blueprint</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- tsparticles -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
 <style>
-body { margin:0; font-family:"Segoe UI", Arial, sans-serif; background:#0b1c2d; color:#fff; overflow-x:hidden; }
-header { background:#081523; padding:20px; text-align:center; }
-header img { height:50px; }
-.container { max-width:900px; margin:50px auto; padding:30px; background:#081523; border-radius:12px; }
-h1 { font-size:36px; color:#1f6fff; margin-bottom:20px; text-align:center; }
-h2 { font-size:28px; color:#ff6f1f; margin-top:30px; margin-bottom:15px; }
-p, li { font-size:18px; line-height:1.6; color:#cfd8e3; }
-ul { list-style: disc; margin-left:20px; margin-bottom:20px; }
-button { padding:15px 25px; background:#1f6fff; border:none; border-radius:8px; font-size:18px; color:#fff; cursor:pointer; margin:30px auto; display:block; }
-button:hover { background:#ff6f1f; }
-footer { margin-top:50px; padding:20px; background:#081523; color:#8fa6bf; font-size:14px; text-align:center; }
-@media(max-width:600px){ h1{font-size:28px;} h2{font-size:22px;} p, li{font-size:16px;} }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #0b1c2d;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #081523;
+  padding: 25px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+header img { height: 55px; }
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 40px;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  padding: 120px 20px 80px;
+  text-align: center;
+}
+
+#hero-bubbles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none; /* FIX CLICK ISSUE */
+}
+
+.hero h1 {
+  font-size: 48px;
+  text-shadow: 0 0 15px #1f6fff, 0 0 30px #ff6f1f;
+  position: relative;
+  z-index: 1;
+}
+
+.hero p {
+  font-size: 22px;
+  max-width: 800px;
+  margin: auto;
+  color: #cfd8e3;
+  position: relative;
+  z-index: 1;
+}
+
+.series-label {
+  color: #ff6f1f;
+  font-weight: 600;
+  margin: 25px 0 40px;
+}
+
+.buttons {
+  position: relative;
+  z-index: 5;
+}
+
+.buttons img {
+  border-radius: 12px;
+  box-shadow: 0 0 25px #1f6fff;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.buttons img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #1f6fff, 0 0 20px #ff6f1f inset;
+}
+
+/* CONTENT */
+.section {
+  background-color: rgba(15,36,58,0.95);
+  padding: 80px 20px;
+}
+
+.card {
+  background-color: #081523;
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0,0,0,.4);
+}
+
+h2 {
+  color: #ff6f1f;
+  font-size: 34px;
+  margin-top: 40px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #cfd8e3;
+}
+
+/* FOOTER */
+footer {
+  background-color: #081523;
+  padding: 40px 20px;
+  text-align: center;
+  color: #8fa6bf;
+  font-size: 14px;
+}
+
+footer img { height: 40px; margin-bottom: 10px; }
+
+@media(max-width:600px){
+  header { padding: 20px; }
+  nav a { margin-left: 15px; }
+  .hero h1 { font-size: 32px; }
+  .hero p, ul li { font-size: 16px; }
+}
 </style>
 </head>
+
 <body>
 
 <header>
   <img src="logo.png" alt="VEXA Logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="clickbank.html">Buy via ClickBank</a>
+  </nav>
 </header>
 
-<div class="container">
+<!-- HERO -->
+<section class="hero" id="home">
+  <div id="hero-bubbles"></div>
+
   <h1>VEXA High-Ticket Closer Blueprint</h1>
-  <p>Zero Experience to Professional Closer in 90 Days. Step-by-step training designed to help beginners understand, practice, and execute high-ticket closing ethically and effectively.</p>
+  <p>
+    Zero Experience to Professional Closer in 90 Days.
+    Step-by-step training designed to help beginners understand,
+    practice, and execute high-ticket closing ethically and effectively.
+  </p>
 
-  <h2>VEXA PROFESSIONAL TRAINING Featured Product</h2>
-  <p>Built for beginners who want to learn how high-ticket sales actually work in real business environments—without hype, manipulation, or unrealistic promises.</p>
+  <div class="series-label">VEXA PROFESSIONAL TRAINING SERIES</div>
 
-  <h2>What This Blueprint Helps You Learn</h2>
-  <ul>
-    <li>How high-ticket sales really work behind the scenes</li>
-    <li>The role of a professional closer vs setters and sales reps</li>
-    <li>How to diagnose client needs instead of pushing offers</li>
-    <li>Ethical, pressure-free closing frameworks</li>
-    <li>How to handle objections with confidence and clarity</li>
-    <li>How to prepare, run, and follow up on professional sales calls</li>
-    <li>How to position yourself for remote closer opportunities</li>
-  </ul>
+  <!-- JVZoo BUY BUTTON -->
+  <div class="buttons">
+    <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank">
+      <img src="https://i.jvzoo.com/115479/433067/11" alt="Buy via JVZoo">
+      <img src="https://i.jvzoo.com/115479/433067/1" width="1" height="1" style="display:none">
+    </a>
+  </div>
+</section>
 
-  <h2>What’s Included</h2>
-  <ul>
-    <li>28-page professional PDF training manual</li>
-    <li>Beginner-friendly explanations with expert-level depth</li>
-    <li>Proven call frameworks and conversation structures</li>
-    <li>Objection-handling scripts and examples</li>
-    <li>Worksheets, checklists, and practice exercises</li>
-    <li>90-day action plan for skill development</li>
-    <li>Realistic income expectations and career pathways</li>
-    <li>Ethical selling standards and decision-making tools</li>
-  </ul>
+<!-- DESCRIPTION -->
+<section class="section">
+  <div class="card">
 
-  <h2>Who This Is For</h2>
-  <ul>
-    <li>Beginners exploring high-ticket sales</li>
-    <li>Aspiring remote closers</li>
-    <li>Freelancers and consultants improving sales conversations</li>
-    <li>Professionals transitioning into commission-based roles</li>
-    <li>Anyone seeking a structured introduction to high-ticket closing</li>
-  </ul>
+    <h2>VEXA PROFESSIONAL TRAINING — Featured Product</h2>
+    <p>
+      Built for beginners who want to learn how high-ticket sales actually work
+      in real business environments—without hype, manipulation, or unrealistic promises.
+    </p>
 
-  <h2>Who This Is NOT For</h2>
-  <ul>
-    <li>People looking for “get-rich-quick” schemes</li>
-    <li>Anyone expecting guaranteed income or instant results</li>
-    <li>Individuals unwilling to practice, learn, and improve</li>
-  </ul>
+    <h2>What This Blueprint Helps You Learn</h2>
+    <ul>
+      <li>How high-ticket sales really work behind the scenes</li>
+      <li>The role of a professional closer vs setters and sales reps</li>
+      <li>How to diagnose client needs instead of pushing offers</li>
+      <li>Ethical, pressure-free closing frameworks</li>
+      <li>How to handle objections with confidence and clarity</li>
+      <li>How to prepare, run, and follow up on professional sales calls</li>
+      <li>How to position yourself for remote closer opportunities</li>
+    </ul>
 
-  <button id="buyBtn">Buy Now</button>
-</div>
+    <h2>What’s Included</h2>
+    <ul>
+      <li>28-page professional PDF training manual</li>
+      <li>Beginner-friendly explanations with expert-level depth</li>
+      <li>Proven call frameworks and conversation structures</li>
+      <li>Objection-handling scripts and examples</li>
+      <li>Worksheets, checklists, and practice exercises</li>
+      <li>90-day action plan for skill development</li>
+      <li>Realistic income expectations and career pathways</li>
+      <li>Ethical selling standards and decision-making tools</li>
+    </ul>
+
+    <h2>Who This Is For</h2>
+    <ul>
+      <li>Beginners exploring high-ticket sales</li>
+      <li>Aspiring remote closers</li>
+      <li>Freelancers and consultants improving sales conversations</li>
+      <li>Professionals transitioning into commission-based roles</li>
+      <li>Anyone seeking a structured introduction to high-ticket closing</li>
+    </ul>
+
+    <h2>Who This Is NOT For</h2>
+    <ul>
+      <li>People looking for “get-rich-quick” schemes</li>
+      <li>Anyone expecting guaranteed income or instant results</li>
+      <li>Individuals unwilling to practice, learn, and improve</li>
+    </ul>
+
+    <!-- NON-REFUND + JVZOO DISCLAIMER -->
+    <h2>Important Purchase Information</h2>
+    <p>
+      <strong>Non-Refundable Purchase:</strong><br>
+      By purchasing this digital product, you acknowledge and agree that
+      all sales are final and non-refundable. You expressly request immediate
+      access to the digital content and waive any applicable right of withdrawal
+      once access is granted.
+    </p>
+
+    <p>
+      <strong>JVZoo Disclaimer:</strong><br>
+      This product does not guarantee income or success.
+      Results vary based on effort, experience, and market conditions.
+      This website is not affiliated with Facebook or Meta Platforms, Inc.
+      JVZoo® is a registered trademark of BBC Systems Inc.
+      JVZoo acts solely as the retailer of this product and does not endorse it.
+    </p>
+
+  </div>
+</section>
 
 <footer>
-  &copy; 2026 VEXA. All rights reserved.
+  <img src="logo.png" alt="VEXA Logo">
+  <div>© 2026 VEXA. All rights reserved.</div>
 </footer>
 
-<!-- ClickBank Script -->
 <script>
-window.clickbank = {
-    vendor: "vexaa"
-};
-</script>
-<script src="https://scripts.clickbank.net/hop.min.js" defer></script>
-
-<script>
-// ClickBank hop redirect without product ID yet
-document.getElementById('buyBtn').addEventListener('click', function() {
-    // Placeholder: once your product is approved, replace "productname" with your ClickBank product ID
-    hop.link("productname"); 
+tsParticles.load("hero-bubbles", {
+  particles: {
+    number: { value: 25 },
+    color: { value: "#ff6f1f" },
+    move: { enable: true, speed: 1, direction: "top" }
+  }
 });
 </script>
 
