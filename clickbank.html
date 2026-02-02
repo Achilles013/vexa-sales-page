@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VEXA High-Ticket Closer Blueprint | Official ClickBank Page</title>
+  <title>VEXA High-Ticket Closer Blueprint | ClickBank</title>
 
-  <!-- ClickBank Vendor Script (SAFE – not activated yet) -->
+  <!-- ClickBank Vendor Script (safe before approval) -->
   <script>
     window.clickbank = { vendor: "vexaa" };
   </script>
@@ -15,30 +15,49 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #0b0d12;
-      color: #eaeaea;
+      background: #0b0f1a;
+      color: #e6e8f0;
       line-height: 1.6;
     }
 
+    /* HEADER */
     header {
-      background: #11131a;
-      padding: 20px 40px;
+      background: #0e1426;
+      padding: 18px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #1f2230;
+      border-bottom: 1px solid #1e2747;
     }
 
-    header h1 {
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand h1 {
       font-size: 22px;
       margin: 0;
-      color: #ffffff;
       letter-spacing: 1px;
+      color: #ffffff;
+    }
+
+    /* CLICK BANK BUTTON (HEADER) */
+    .cb-header-btn {
+      background: #1b2a5b;
+      color: #ffffff;
+      border: 1px solid #2c3f86;
+      padding: 10px 18px;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: not-allowed;
+      opacity: 0.75;
     }
 
     nav a {
-      margin-left: 20px;
-      color: #cfd3ff;
+      margin-left: 22px;
+      color: #cfd6ff;
       text-decoration: none;
       font-size: 14px;
     }
@@ -47,6 +66,7 @@
       text-decoration: underline;
     }
 
+    /* CONTENT */
     .container {
       max-width: 1000px;
       margin: 60px auto;
@@ -55,23 +75,23 @@
 
     h2 {
       font-size: 36px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       color: #ffffff;
     }
 
     h3 {
+      margin-top: 42px;
       font-size: 22px;
-      margin-top: 40px;
-      color: #cfd3ff;
+      color: #cfd6ff;
     }
 
     p {
       margin-bottom: 16px;
-      color: #d5d7e0;
+      color: #d6daf0;
     }
 
     ul {
-      margin: 20px 0;
+      margin: 18px 0;
       padding-left: 20px;
     }
 
@@ -79,38 +99,13 @@
       margin-bottom: 10px;
     }
 
-    .cta-box {
-      margin-top: 50px;
-      padding: 30px;
-      background: #141726;
-      border: 1px solid #242845;
-      border-radius: 6px;
-      text-align: center;
-    }
-
-    .cta-box button {
-      background: #5f6cff;
-      color: #ffffff;
-      font-size: 18px;
-      padding: 14px 30px;
-      border: none;
-      border-radius: 4px;
-      cursor: not-allowed;
-      opacity: 0.7;
-    }
-
-    .cta-box p {
-      font-size: 13px;
-      margin-top: 12px;
-      color: #9aa0c3;
-    }
-
+    /* FOOTER DISCLAIMER */
     .disclaimer {
-      margin-top: 60px;
+      margin-top: 70px;
       padding-top: 30px;
-      border-top: 1px solid #1f2230;
+      border-top: 1px solid #1e2747;
       font-size: 12px;
-      color: #9aa0c3;
+      color: #9aa3c7;
     }
 
     footer {
@@ -118,8 +113,8 @@
       padding: 30px;
       text-align: center;
       font-size: 12px;
-      color: #8a8fae;
-      border-top: 1px solid #1f2230;
+      color: #8c93b8;
+      border-top: 1px solid #1e2747;
     }
   </style>
 </head>
@@ -127,7 +122,14 @@
 <body>
 
 <header>
-  <h1>VEXA</h1>
+  <div class="brand">
+    <h1>VEXA</h1>
+    <!-- FUTURE CLICK BANK BUTTON (HEADER ONLY) -->
+    <button class="cb-header-btn">
+      Buy via ClickBank
+    </button>
+  </div>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="products.html">Products</a>
@@ -138,8 +140,10 @@
 <div class="container">
 
   <h2>VEXA High-Ticket Closer Blueprint</h2>
-  <p><strong>Zero Experience to Professional Closer in 90 Days.</strong><br>
-  Step-by-step training designed to help beginners understand, practice, and execute high-ticket closing ethically and effectively.</p>
+  <p>
+    <strong>Zero Experience to Professional Closer in 90 Days.</strong><br>
+    Step-by-step training designed to help beginners understand, practice, and execute high-ticket closing ethically and effectively.
+  </p>
 
   <h3>VEXA Professional Training — Featured Product</h3>
   <p>
@@ -185,21 +189,10 @@
     <li>Individuals unwilling to practice, learn, and improve</li>
   </ul>
 
-  <div class="cta-box">
-    <button>Buy via ClickBank</button>
-    <p>Checkout will be activated once product approval is completed.</p>
-  </div>
-
   <div class="disclaimer">
-    <p>
-      <strong>Earnings Disclaimer:</strong> This product does not guarantee income, results, or employment. Success in sales depends on individual effort, skill development, market conditions, and consistent practice.
-    </p>
-    <p>
-      <strong>Refund Policy:</strong> This is a digital educational product. Refunds, if applicable, are handled strictly according to ClickBank’s official refund policy.
-    </p>
-    <p>
-      VEXA provides educational content only and does not offer financial, legal, or employment advice.
-    </p>
+    <p><strong>Earnings Disclaimer:</strong> This product does not guarantee income or results. Outcomes depend on individual effort, skills, and market conditions.</p>
+    <p><strong>Refund Policy:</strong> Refunds, if applicable, are processed according to ClickBank’s official refund policy.</p>
+    <p>VEXA provides educational content only and does not offer financial, legal, or employment advice.</p>
   </div>
 
 </div>
