@@ -1,160 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>VEXA — High-Ticket Closer Blueprint</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>VEXA — High-Ticket Closer Blueprint</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- tsparticles -->
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <!-- tsparticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
-<style>
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #0b1c2d;
-  color: #ffffff;
-  overflow-x: hidden;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #0b1c2d;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
 
-header {
-  background-color: #081523;
-  padding: 25px 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 10;
-}
+    header {
+      background-color: #081523;
+      padding: 25px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
 
-header img { height: 55px; }
+    header img {
+      height: 55px;
+    }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 40px;
-  font-weight: 500;
-}
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 40px;
+      font-weight: 500;
+    }
 
-/* HERO */
-.hero {
-  position: relative;
-  padding: 120px 20px 80px;
-  text-align: center;
-}
+    nav a:hover {
+      color: #ff6f1f;
+    }
 
-#hero-bubbles {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 120px 20px 80px;
+      text-align: center;
+    }
 
-.hero h1 {
-  font-size: 48px;
-  text-shadow: 0 0 15px #1f6fff, 0 0 30px #ff6f1f;
-  position: relative;
-  z-index: 1;
-}
+    #hero-bubbles {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
 
-.hero p {
-  font-size: 22px;
-  max-width: 800px;
-  margin: auto;
-  color: #cfd8e3;
-  position: relative;
-  z-index: 1;
-}
+    .hero h1 {
+      font-size: 48px;
+      text-shadow: 0 0 15px #1f6fff, 0 0 30px #ff6f1f;
+      position: relative;
+      z-index: 1;
+    }
 
-.series-label {
-  color: #ff6f1f;
-  font-weight: 600;
-  margin: 25px 0 40px;
-  position: relative;
-  z-index: 1;
-}
+    .hero p {
+      font-size: 22px;
+      max-width: 800px;
+      margin: auto;
+      color: #cfd8e3;
+      position: relative;
+      z-index: 1;
+    }
 
-.buttons {
-  position: relative;
-  z-index: 5;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
+    .series-label {
+      color: #ff6f1f;
+      font-weight: 600;
+      margin: 25px 0 0;
+      position: relative;
+      z-index: 1;
+    }
 
-.buttons img {
-  border-radius: 12px;
-  box-shadow: 0 0 25px #1f6fff;
-  transition: transform .3s, box-shadow .3s;
-}
+    /* CONTENT */
+    .section {
+      background-color: rgba(15,36,58,0.95);
+      padding: 80px 20px;
+    }
 
-.buttons img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px #1f6fff, 0 0 20px #ff6f1f inset;
-}
+    .card {
+      background-color: #081523;
+      max-width: 900px;
+      margin: auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(0,0,0,.4);
+    }
 
-.payhip-btn {
-  padding: 16px 36px;
-  background: #1f6fff;
-  color: #fff;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 0 25px rgba(31,111,255,0.6);
-}
+    h2 {
+      color: #ff6f1f;
+      font-size: 34px;
+      margin-top: 40px;
+    }
 
-/* CONTENT */
-.section {
-  background-color: rgba(15,36,58,0.95);
-  padding: 80px 20px;
-}
+    ul {
+      list-style: none;
+      padding: 0;
+    }
 
-.card {
-  background-color: #081523;
-  max-width: 900px;
-  margin: auto;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 40px rgba(0,0,0,.4);
-}
+    ul li {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #cfd8e3;
+    }
 
-h2 {
-  color: #ff6f1f;
-  font-size: 34px;
-  margin-top: 40px;
-}
+    /* FOOTER */
+    footer {
+      background-color: #081523;
+      padding: 40px 20px;
+      text-align: center;
+      color: #8fa6bf;
+      font-size: 14px;
+    }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
+    footer img {
+      height: 40px;
+      margin-bottom: 10px;
+    }
 
-ul li {
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #cfd8e3;
-}
+    @media(max-width:600px){
+      header {
+        padding: 20px;
+      }
 
-/* FOOTER */
-footer {
-  background-color: #081523;
-  padding: 40px 20px;
-  text-align: center;
-  color: #8fa6bf;
-  font-size: 14px;
-}
+      nav a {
+        margin-left: 15px;
+      }
 
-footer img { height: 40px; margin-bottom: 10px; }
+      .hero h1 {
+        font-size: 32px;
+      }
 
-@media(max-width:600px){
-  header { padding: 20px; }
-  nav a { margin-left: 15px; }
-  .hero h1 { font-size: 32px; }
-  .hero p, ul li { font-size: 16px; }
-}
-</style>
+      .hero p, ul li {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -164,7 +153,9 @@ footer img { height: 40px; margin-bottom: 10px; }
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">The VEXA Standard</a>
-    <a href="payhip.html">Buy</a>
+    <a href="https://payhip.com/b/Pk79U" target="_blank" rel="noopener">
+      Buy via Payhip
+    </a>
   </nav>
 </header>
 
@@ -173,28 +164,16 @@ footer img { height: 40px; margin-bottom: 10px; }
   <div id="hero-bubbles"></div>
 
   <h1>VEXA High-Ticket Closer Blueprint</h1>
+
   <p>
-    Zero Experience to Professional Closer in 90 Days.
-    Structured training for beginners and professionals to master ethical,
-    real-world high-ticket sales execution.
+    Zero experience to professional closer in 90 days.
+    A structured, beginner-friendly training designed to teach how
+    high-ticket sales actually work in real business environments —
+    ethically, professionally, and without hype.
   </p>
 
-  <div class="series-label">VEXA PROFESSIONAL TRAINING SERIES</div>
-
-  <!-- BUY OPTIONS -->
-  <div class="buttons">
-
-    <!-- JVZoo -->
-    <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank">
-      <img src="https://i.jvzoo.com/115479/433067/11" alt="Buy via JVZoo">
-      <img src="https://i.jvzoo.com/115479/433067/1" width="1" height="1" style="display:none">
-    </a>
-
-    <!-- Payhip -->
-    <a class="payhip-btn" href="https://payhip.com/b/Pk79U" target="_blank">
-      Buy via Payhip
-    </a>
-
+  <div class="series-label">
+    VEXA PROFESSIONAL TRAINING SERIES
   </div>
 </section>
 
@@ -202,59 +181,62 @@ footer img { height: 40px; margin-bottom: 10px; }
 <section class="section">
   <div class="card">
 
-    <h2>VEXA PROFESSIONAL TRAINING — Featured Product</h2>
+    <h2>VEXA Professional Training — Featured Product</h2>
     <p>
-      Built for beginners who want to understand how high-ticket sales actually work
-      in real business environments — without hype, manipulation, or unrealistic promises.
+      Built for beginners who want a realistic, professional introduction
+      to high-ticket sales — without manipulation, false promises, or
+      “get-rich-quick” narratives.
     </p>
 
     <h2>What This Blueprint Helps You Learn</h2>
     <ul>
-      <li>How high-ticket sales work behind the scenes</li>
-      <li>The role of a professional closer vs setters and reps</li>
-      <li>How to diagnose needs instead of pushing offers</li>
+      <li>How high-ticket sales actually work behind the scenes</li>
+      <li>The difference between closers, setters, and sales reps</li>
+      <li>How to diagnose client needs instead of pushing offers</li>
       <li>Ethical, pressure-free closing frameworks</li>
-      <li>Professional objection handling</li>
-      <li>Call preparation, execution, and follow-up</li>
-      <li>Positioning for remote closer opportunities</li>
+      <li>Professional objection handling with confidence and clarity</li>
+      <li>How to prepare, run, and follow up on structured sales calls</li>
+      <li>How to position yourself for legitimate remote closer roles</li>
     </ul>
 
     <h2>What’s Included</h2>
     <ul>
       <li>28-page professional PDF training manual</li>
-      <li>Beginner-friendly explanations with depth</li>
-      <li>Proven call structures and scripts</li>
-      <li>Worksheets, checklists, and exercises</li>
-      <li>90-day skill development roadmap</li>
-      <li>Ethical selling standards</li>
+      <li>Beginner-friendly explanations with expert-level depth</li>
+      <li>Proven call frameworks and conversation structures</li>
+      <li>Objection-handling examples and scripts</li>
+      <li>Worksheets, checklists, and practice exercises</li>
+      <li>90-day structured skill development plan</li>
+      <li>Ethical selling standards and decision-making tools</li>
     </ul>
 
     <h2>Who This Is For</h2>
     <ul>
-      <li>Beginners entering high-ticket sales</li>
+      <li>Beginners exploring high-ticket sales</li>
       <li>Aspiring remote closers</li>
-      <li>Freelancers and consultants</li>
-      <li>Professionals transitioning to commission roles</li>
+      <li>Freelancers and consultants improving sales conversations</li>
+      <li>Professionals transitioning into commission-based roles</li>
     </ul>
 
     <h2>Who This Is NOT For</h2>
     <ul>
-      <li>Get-rich-quick seekers</li>
-      <li>Anyone expecting guaranteed income</li>
-      <li>People unwilling to practice and improve</li>
+      <li>Anyone looking for guaranteed income</li>
+      <li>People chasing shortcuts or hype-driven tactics</li>
+      <li>Individuals unwilling to practice and develop real skills</li>
     </ul>
 
     <h2>Important Purchase Information</h2>
     <p>
-      <strong>Non-Refundable Digital Product:</strong><br>
-      All sales are final once access is granted.
+      <strong>Digital Product — Non-Refundable:</strong><br>
+      By purchasing this product, you acknowledge that you are receiving
+      immediate access to digital content. All sales are final and
+      non-refundable once access is granted.
     </p>
 
     <p>
-      <strong>Disclaimer:</strong><br>
-      Results vary based on effort and experience.
-      JVZoo® is a registered trademark of BBC Systems Inc.
-      Payhip processes payments only and does not endorse the product.
+      This training does not guarantee income or employment.
+      Results depend on individual effort, skill development,
+      and market conditions.
     </p>
 
   </div>
@@ -266,13 +248,13 @@ footer img { height: 40px; margin-bottom: 10px; }
 </footer>
 
 <script>
-tsParticles.load("hero-bubbles", {
-  particles: {
-    number: { value: 25 },
-    color: { value: "#ff6f1f" },
-    move: { enable: true, speed: 1, direction: "top" }
-  }
-});
+  tsParticles.load("hero-bubbles", {
+    particles: {
+      number: { value: 25 },
+      color: { value: "#ff6f1f" },
+      move: { enable: true, speed: 1, direction: "top" }
+    }
+  });
 </script>
 
 </body>
