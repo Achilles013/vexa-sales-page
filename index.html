@@ -47,7 +47,7 @@ nav a {
   position: absolute;
   inset: 0;
   z-index: 0;
-  pointer-events: none; /* FIX CLICK ISSUE */
+  pointer-events: none;
 }
 
 .hero h1 {
@@ -70,11 +70,17 @@ nav a {
   color: #ff6f1f;
   font-weight: 600;
   margin: 25px 0 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .buttons {
   position: relative;
   z-index: 5;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 .buttons img {
@@ -86,6 +92,17 @@ nav a {
 .buttons img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 40px #1f6fff, 0 0 20px #ff6f1f inset;
+}
+
+.payhip-btn {
+  padding: 16px 36px;
+  background: #1f6fff;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 25px rgba(31,111,255,0.6);
 }
 
 /* CONTENT */
@@ -147,9 +164,10 @@ footer img { height: 40px; margin-bottom: 10px; }
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">The VEXA Standard</a>
+    <a href="payhip.html">Buy</a>
   </nav>
 </header>
-  
+
 <!-- HERO -->
 <section class="hero" id="home">
   <div id="hero-bubbles"></div>
@@ -157,18 +175,26 @@ footer img { height: 40px; margin-bottom: 10px; }
   <h1>VEXA High-Ticket Closer Blueprint</h1>
   <p>
     Zero Experience to Professional Closer in 90 Days.
-    Step-by-step training designed to help beginners understand,
-    practice, and execute high-ticket closing ethically and effectively.
+    Structured training for beginners and professionals to master ethical,
+    real-world high-ticket sales execution.
   </p>
 
   <div class="series-label">VEXA PROFESSIONAL TRAINING SERIES</div>
 
-  <!-- JVZoo BUY BUTTON -->
+  <!-- BUY OPTIONS -->
   <div class="buttons">
+
+    <!-- JVZoo -->
     <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank">
       <img src="https://i.jvzoo.com/115479/433067/11" alt="Buy via JVZoo">
       <img src="https://i.jvzoo.com/115479/433067/1" width="1" height="1" style="display:none">
     </a>
+
+    <!-- Payhip -->
+    <a class="payhip-btn" href="https://payhip.com/b/Pk79U" target="_blank">
+      Buy via Payhip
+    </a>
+
   </div>
 </section>
 
@@ -178,66 +204,57 @@ footer img { height: 40px; margin-bottom: 10px; }
 
     <h2>VEXA PROFESSIONAL TRAINING — Featured Product</h2>
     <p>
-      Built for beginners who want to learn how high-ticket sales actually work
-      in real business environments—without hype, manipulation, or unrealistic promises.
+      Built for beginners who want to understand how high-ticket sales actually work
+      in real business environments — without hype, manipulation, or unrealistic promises.
     </p>
 
     <h2>What This Blueprint Helps You Learn</h2>
     <ul>
-      <li>How high-ticket sales really work behind the scenes</li>
-      <li>The role of a professional closer vs setters and sales reps</li>
-      <li>How to diagnose client needs instead of pushing offers</li>
+      <li>How high-ticket sales work behind the scenes</li>
+      <li>The role of a professional closer vs setters and reps</li>
+      <li>How to diagnose needs instead of pushing offers</li>
       <li>Ethical, pressure-free closing frameworks</li>
-      <li>How to handle objections with confidence and clarity</li>
-      <li>How to prepare, run, and follow up on professional sales calls</li>
-      <li>How to position yourself for remote closer opportunities</li>
+      <li>Professional objection handling</li>
+      <li>Call preparation, execution, and follow-up</li>
+      <li>Positioning for remote closer opportunities</li>
     </ul>
 
     <h2>What’s Included</h2>
     <ul>
       <li>28-page professional PDF training manual</li>
-      <li>Beginner-friendly explanations with expert-level depth</li>
-      <li>Proven call frameworks and conversation structures</li>
-      <li>Objection-handling scripts and examples</li>
-      <li>Worksheets, checklists, and practice exercises</li>
-      <li>90-day action plan for skill development</li>
-      <li>Realistic income expectations and career pathways</li>
-      <li>Ethical selling standards and decision-making tools</li>
+      <li>Beginner-friendly explanations with depth</li>
+      <li>Proven call structures and scripts</li>
+      <li>Worksheets, checklists, and exercises</li>
+      <li>90-day skill development roadmap</li>
+      <li>Ethical selling standards</li>
     </ul>
 
     <h2>Who This Is For</h2>
     <ul>
-      <li>Beginners exploring high-ticket sales</li>
+      <li>Beginners entering high-ticket sales</li>
       <li>Aspiring remote closers</li>
-      <li>Freelancers and consultants improving sales conversations</li>
-      <li>Professionals transitioning into commission-based roles</li>
-      <li>Anyone seeking a structured introduction to high-ticket closing</li>
+      <li>Freelancers and consultants</li>
+      <li>Professionals transitioning to commission roles</li>
     </ul>
 
     <h2>Who This Is NOT For</h2>
     <ul>
-      <li>People looking for “get-rich-quick” schemes</li>
-      <li>Anyone expecting guaranteed income or instant results</li>
-      <li>Individuals unwilling to practice, learn, and improve</li>
+      <li>Get-rich-quick seekers</li>
+      <li>Anyone expecting guaranteed income</li>
+      <li>People unwilling to practice and improve</li>
     </ul>
 
-    <!-- NON-REFUND + JVZOO DISCLAIMER -->
     <h2>Important Purchase Information</h2>
     <p>
-      <strong>Non-Refundable Purchase:</strong><br>
-      By purchasing this digital product, you acknowledge and agree that
-      all sales are final and non-refundable. You expressly request immediate
-      access to the digital content and waive any applicable right of withdrawal
-      once access is granted.
+      <strong>Non-Refundable Digital Product:</strong><br>
+      All sales are final once access is granted.
     </p>
 
     <p>
-      <strong>JVZoo Disclaimer:</strong><br>
-      This product does not guarantee income or success.
-      Results vary based on effort, experience, and market conditions.
-      This website is not affiliated with Facebook or Meta Platforms, Inc.
+      <strong>Disclaimer:</strong><br>
+      Results vary based on effort and experience.
       JVZoo® is a registered trademark of BBC Systems Inc.
-      JVZoo acts solely as the retailer of this product and does not endorse it.
+      Payhip processes payments only and does not endorse the product.
     </p>
 
   </div>
