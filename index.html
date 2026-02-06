@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>VEXA — Ethical High-Ticket Sales Training</title>
+  <title>VEXA — High-Ticket Closer Blueprint</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- tsparticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
   <style>
     body {
@@ -20,11 +23,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
+      z-index: 10;
     }
 
-    header img {
-      height: 55px;
-    }
+    header img { height: 55px; }
 
     nav a {
       color: #ffffff;
@@ -33,78 +36,103 @@
       font-weight: 500;
     }
 
-    nav a:hover {
-      color: #ff6f1f;
+    nav a:hover { color: #ff6f1f; }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 120px 20px 80px;
+      text-align: center;
     }
 
-    .hero {
-      padding: 120px 20px;
-      text-align: center;
-      background: radial-gradient(circle at top, #102a44, #0b1c2d);
+    #hero-bubbles {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
     }
 
     .hero h1 {
       font-size: 48px;
-      color: #ff6f1f;
-      margin-bottom: 20px;
+      text-shadow: 0 0 15px #1f6fff, 0 0 30px #ff6f1f;
+      position: relative;
+      z-index: 1;
     }
 
     .hero p {
-      max-width: 760px;
+      font-size: 22px;
+      max-width: 800px;
       margin: auto;
-      font-size: 20px;
       color: #cfd8e3;
+      position: relative;
+      z-index: 1;
       line-height: 1.6;
     }
 
-    .cta {
-      margin-top: 50px;
+    .series-label {
+      color: #ff6f1f;
+      font-weight: 600;
+      margin: 25px 0 40px;
+      position: relative;
+      z-index: 1;
     }
 
-    .cta a {
-      display: inline-block;
-      padding: 16px 34px;
-      font-size: 18px;
-      font-weight: 600;
-      border-radius: 10px;
-      text-decoration: none;
-      background: linear-gradient(135deg,#ff6f1f,#1f6fff);
-      color: #fff;
-      box-shadow: 0 0 25px rgba(31,111,255,.5);
+    .buttons {
+      position: relative;
+      z-index: 5;
+      margin-top: 30px;
+    }
+
+    .buttons img {
+      border-radius: 12px;
+      box-shadow: 0 0 25px #1f6fff;
       transition: transform .3s, box-shadow .3s;
     }
 
-    .cta a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 35px rgba(255,111,31,.6);
+    .buttons img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #1f6fff, 0 0 20px #ff6f1f inset;
     }
 
+    /* CONTENT */
     .section {
-      padding: 100px 20px;
       background-color: rgba(15,36,58,0.95);
+      padding: 90px 20px;
     }
 
     .card {
+      background-color: #081523;
       max-width: 900px;
       margin: auto;
-      background-color: #081523;
-      padding: 60px;
-      border-radius: 14px;
-      box-shadow: 0 0 40px rgba(0,0,0,.45);
+      padding: 50px;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(0,0,0,.4);
     }
 
-    .card h2 {
+    h2 {
       color: #ff6f1f;
       font-size: 34px;
-      margin-bottom: 20px;
+      margin-top: 40px;
     }
 
-    .card p {
+    p {
       font-size: 18px;
       color: #cfd8e3;
       line-height: 1.7;
     }
 
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #cfd8e3;
+    }
+
+    /* FOOTER */
     footer {
       background-color: #081523;
       padding: 40px 20px;
@@ -118,18 +146,11 @@
       margin-bottom: 10px;
     }
 
-    @media(max-width:700px){
-      header {
-        padding: 20px;
-      }
-
-      nav a {
-        margin-left: 15px;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
+    @media(max-width:600px){
+      header { padding: 20px; }
+      nav a { margin-left: 15px; }
+      .hero h1 { font-size: 32px; }
+      .hero p, ul li { font-size: 16px; }
     }
   </style>
 </head>
@@ -146,31 +167,92 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>High-Ticket Sales, Done Properly</h1>
+  <div id="hero-bubbles"></div>
+
+  <h1>VEXA High-Ticket Closer Blueprint</h1>
+
   <p>
-    VEXA is a professional training framework built for people who want to
-    understand how high-ticket sales actually work — without hype, pressure,
-    manipulation, or false promises.
+    Zero experience to professional closer in 90 days.  
+    A structured, ethical training system designed to build real sales skills —
+    not hype, manipulation, or unrealistic promises.
   </p>
 
-  <div class="cta">
-    <a href="https://payhip.com/b/Pk79U" target="_blank">
-      View Training Program
+  <div class="series-label">VEXA PROFESSIONAL TRAINING SERIES</div>
+
+  <!-- JVZoo BUTTON -->
+  <div class="buttons">
+    <a href="https://www.jvzoo.com/b/115479/433067/1" target="_blank">
+      <img src="https://i.jvzoo.com/115479/433067/11" alt="Buy via JVZoo">
+      <img src="https://i.jvzoo.com/115479/433067/1" width="1" height="1" style="display:none">
     </a>
   </div>
 </section>
 
+<!-- PRODUCT CONTENT -->
 <section class="section">
   <div class="card">
-    <h2>What Makes VEXA Different</h2>
+
+    <h2>VEXA Professional Training — Featured Product</h2>
     <p>
-      This is not influencer sales.  
-      This is not “scripts that magically close anyone.”  
-      VEXA teaches diagnosis, ethics, decision-making, and professional
-      communication — the same standards used in real consulting and enterprise
-      sales environments.
+      Built for beginners who want to understand how high-ticket sales actually
+      work in real business environments — without pressure tactics, scripts,
+      or false expectations.
     </p>
+
+    <h2>What This Blueprint Helps You Learn</h2>
+    <ul>
+      <li>How high-ticket sales work behind the scenes</li>
+      <li>The role of a professional closer vs setters and sales reps</li>
+      <li>How to diagnose client needs instead of pushing offers</li>
+      <li>Ethical, pressure-free closing frameworks</li>
+      <li>Handling objections with confidence and clarity</li>
+      <li>Preparing, running, and following up on sales calls</li>
+      <li>Positioning yourself for remote closer opportunities</li>
+    </ul>
+
+    <h2>What’s Included</h2>
+    <ul>
+      <li>28-page professional PDF training manual</li>
+      <li>Beginner-friendly explanations with expert-level depth</li>
+      <li>Proven call frameworks and conversation structures</li>
+      <li>Objection-handling scripts and real examples</li>
+      <li>Worksheets, checklists, and practice exercises</li>
+      <li>90-day action plan for skill development</li>
+      <li>Realistic income expectations and career pathways</li>
+      <li>Ethical selling standards and decision-making tools</li>
+    </ul>
+
+    <h2>Who This Is For</h2>
+    <ul>
+      <li>Beginners exploring high-ticket sales</li>
+      <li>Aspiring remote closers</li>
+      <li>Freelancers and consultants improving sales conversations</li>
+      <li>Professionals transitioning into commission-based roles</li>
+    </ul>
+
+    <h2>Who This Is NOT For</h2>
+    <ul>
+      <li>Get-rich-quick seekers</li>
+      <li>Anyone expecting guaranteed income</li>
+      <li>People unwilling to practice and improve</li>
+    </ul>
+
+    <h2>Important Purchase Information</h2>
+    <p>
+      <strong>Non-Refundable Purchase:</strong><br>
+      This is a digital product. All sales are final and non-refundable.
+      By purchasing, you request immediate access and waive any right of withdrawal.
+    </p>
+
+    <p>
+      <strong>JVZoo Disclaimer:</strong><br>
+      This product does not guarantee income or success. Results depend on effort,
+      experience, and market conditions. JVZoo® is a registered trademark of
+      BBC Systems Inc. JVZoo acts solely as the retailer and does not endorse this product.
+    </p>
+
   </div>
 </section>
 
@@ -178,6 +260,16 @@
   <img src="logo.png" alt="VEXA Logo">
   <div>© 2026 VEXA. All rights reserved.</div>
 </footer>
+
+<script>
+  tsParticles.load("hero-bubbles", {
+    particles: {
+      number: { value: 25 },
+      color: { value: "#ff6f1f" },
+      move: { enable: true, speed: 1, direction: "top" }
+    }
+  });
+</script>
 
 </body>
 </html>
