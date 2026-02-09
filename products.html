@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VEXA — Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #0b1c2d;
+      color: #ffffff;
+    }
+
+    header {
+      background-color: #081523;
+      padding: 25px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img { height: 55px; }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 40px;
+      font-weight: 500;
+    }
+
+    nav a:hover { color: #ff6f1f; }
+
+    .page {
+      padding: 90px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 20px;
+      color: #cfd8e3;
+      max-width: 800px;
+      margin: 0 auto 70px;
+      line-height: 1.6;
+    }
+
+    .product-card {
+      background-color: #081523;
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 35px rgba(0,0,0,.4);
+    }
+
+    .product-card h2 {
+      color: #ff6f1f;
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .product-card p {
+      font-size: 18px;
+      color: #cfd8e3;
+      line-height: 1.7;
+    }
+
+    .product-meta {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #8fa6bf;
+    }
+
+    .product-actions {
+      margin-top: 30px;
+    }
+
+    .product-actions a {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 8px;
+      background-color: #ff6f1f;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .product-actions a:hover {
+      background-color: #ff8a3d;
+    }
+
+    footer {
+      background-color: #081523;
+      padding: 40px 20px;
+      text-align: center;
+      color: #8fa6bf;
+      font-size: 14px;
+      margin-top: 80px;
+    }
+
+    @media(max-width:600px){
+      header { padding: 20px; }
+      nav a { margin-left: 15px; }
+      h1 { font-size: 30px; }
+      .subtitle, .product-card p { font-size: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png" alt="VEXA Logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">The VEXA Standard</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="page">
+
+  <h1>VEXA Products</h1>
+
+  <div class="subtitle">
+    Structured execution systems designed for professionals operating
+    in complex, high-stakes environments.  
+    Built for clarity, repeatability, and real-world deployment.
+  </div>
+
+  <!-- PRODUCT 1 -->
+  <div class="product-card">
+    <h2>VEXA 2026 AI Execution Vault</h2>
+
+    <p>
+      A professional execution framework that institutionalizes how organizations
+      use artificial intelligence across strategy, revenue, and operations.
+      Designed to replace ad-hoc prompting with governed, auditable architectures.
+    </p>
+
+    <div class="product-meta">
+      Format: Digital PDF<br>
+      Delivery: Immediate access<br>
+      License: Single-entity internal use
+    </div>
+
+    <div class="product-actions">
+      <a href="vexa-2026-ai-execution-vault.html">
+        View Product
+      </a>
+    </div>
+  </div>
+
+  <!-- PRODUCT 2 -->
+  <div class="product-card">
+    <h2>VEXA High-Ticket Closer Blueprint</h2>
+
+    <p>
+      A structured, ethical training system designed to teach how high-ticket
+      sales work in real business environments — without pressure tactics,
+      scripts, or unrealistic promises.
+    </p>
+
+    <div class="product-meta">
+      Format: Digital PDF<br>
+      Audience: Beginners & transitioning professionals
+    </div>
+
+    <div class="product-actions">
+      <a href="index.html">
+        View Product
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <img src="logo.png" alt="VEXA Logo">
+  <div>© 2026 VEXA. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
